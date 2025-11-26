@@ -1,0 +1,914 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Livro de Recordações – Formandos 2025</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="book">
+
+  <!-- ========================= -->
+  <!-- PÁGINA 1 – CAPA GLAMOUROSA -->
+  <!-- ========================= -->
+  <div class="page" id="page1">
+    <div class="page-content" style="background: transparent;">
+
+      <div class="cover-wrapper">
+        <div class="cover">
+          <div class="cover-inner">
+
+            <div class="school">
+              E. E. Deputado Teodósio Bandeira 
+            </div> 
+            <br><br><br><br>
+
+            <div class="divider"></div>
+
+            <div class="title">
+              Livro de Recordações
+            </div>
+            <br>
+
+            <div class="divider"></div>
+            <br><br><br>
+
+            <div class="quote">
+              “Uma turma que deixou marcas, <br>
+              memórias e brilho por onde passou.”
+            </div>
+            <br>
+
+            <div class="subtitle">
+              Formandos 2025 <br>
+              Edição Especial			  
+            </div>		
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- NAV INFERIOR – CAPA (só AVANÇA) -->
+    <div class="nav-bar">
+      <!-- voltar desativado na capa -->
+      <button class="nav-btn nav-btn-disabled" aria-disabled="true">&#x25C0;</button>
+      <!-- avançar vira a página 1 -->
+      <button class="nav-btn" onclick="flip(1)">&#x25B6;</button>
+    </div>
+  </div>
+
+  <!-- ==================================== -->
+  <!-- PÁGINA 2 – ANA CAROLINA (KIKI)      -->
+  <!-- ==================================== -->
+  <div class="page" id="page2">
+    <div class="page-content" style="background: transparent;">
+
+      <div class="page-glam tema-preto">
+        <div class="page-glam-inner">
+
+          <h2>Ana Carolina (Kiki)</h2>
+
+          <div class="glam-layout">
+            <div class="glam-photo">
+              <img src="fotos/ana-caroline-jovem.jpeg" alt="Ana Carolina jovem">
+            </div>
+
+            <div class="glam-photo">
+              <img src="fotos/ana-caroline-crianca.jpeg" alt="Ana Carolina criança">
+            </div>
+
+            <div class="glam-msg">
+              “Ana Carolina, ver a sua caminhada até aqui é um presente.
+              Seu sorriso, sua coragem e seu jeito único de enxergar o mundo mostram o quanto você é especial.
+              Que esta nova fase seja cheia de conquistas, aprendizados e sonhos realizados.
+              Nunca esqueça: você é capaz de muito mais do que imagina.”
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+
+    <!-- NAV DA PÁGINA 2 -->
+    <div class="nav-bar">
+      <button class="nav-btn" onclick="unflip(1)">&#x25C0;</button>
+      <button class="nav-btn" onclick="flip(2)">&#x25B6;</button>
+    </div>
+  </div>
+
+  <!-- ==================================== -->
+  <!-- PÁGINA 3 – ANDRESSA (DRESSA)        -->
+  <!-- ==================================== -->
+  <div class="page" id="page3">
+    <div class="page-content">
+      <div class="page-glam tema-preto">
+        <div class="page-glam-inner">
+
+          <h2>Andressa (Dressa)</h2>
+
+          <div class="glam-layout">
+            <div class="glam-photo">
+              <img src="fotos/andressa-crianca.jpeg" alt="Andressa criança">
+            </div>
+            <div class="glam-photo">
+              <img src="fotos/andressa-jovem.jpeg" alt="Andressa hoje">
+            </div>
+
+            <div class="glam-msg">
+              “Andressa, acompanhar sua evolução ao longo desses anos
+              é motivo de muito orgulho. Seu jeito firme, verdadeiro e
+              determinado mostra o quanto você é forte.
+
+              Que esta nova fase traga oportunidades lindas, caminhos
+              abertos e muitas conquistas. Confie em você, no seu brilho
+              e na sua capacidade de ir muito além do que imagina.”
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <!-- NAV PÁGINA 3 -->
+    <div class="nav-bar">
+      <button class="nav-btn" onclick="unflip(2)">&#x25C0;</button>
+      <button class="nav-btn" onclick="flip(3)">&#x25B6;</button>
+    </div>
+  </div>
+
+  <!-- ==================================== -->
+  <!-- PÁGINA 4 – BIANCA (BIBI)            -->
+  <!-- ==================================== -->
+  <div class="page" id="page4">
+    <div class="page-content">
+      <div class="page-glam tema-lilas">
+        <div class="page-glam-inner">
+
+          <h2>Bianca (Bibi)</h2>
+
+          <div class="glam-layout">
+            <div class="glam-photo">
+              <img src="fotos/bianca-crianca.jpeg" alt="Bianca criança">
+            </div>
+            <div class="glam-photo">
+              <img src="fotos/bianca-jovem.jpeg" alt="Bianca hoje">
+            </div>
+
+            <div class="glam-msg">
+              “Bianca, que alegria ver sua caminhada florescer.
+              Seu jeito doce, sua força silenciosa e sua determinação mostram o quanto você é especial.
+              Que esta nova fase seja repleta de conquistas, sonhos realizados e oportunidades que te levem ainda mais longe.
+              Continue acreditando na jovem incrível que você é.”
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <!-- NAV PÁGINA 4 -->
+    <div class="nav-bar">
+      <button class="nav-btn" onclick="unflip(3)">&#x25C0;</button>
+      <button class="nav-btn" onclick="flip(4)">&#x25B6;</button>
+    </div>
+  </div>
+
+  <!-- ==================================== -->
+  <!-- PÁGINA 5 – BRENDA (VERDE)           -->
+  <!-- ==================================== -->
+  <div class="page" id="page5">
+    <div class="page-content">
+      <div class="page-glam tema-verde">
+        <div class="page-glam-inner">
+
+          <h2>Brenda</h2>
+
+          <div class="glam-layout">
+            <div class="glam-photo">
+              <img src="fotos/brenda-crianca.jpeg" alt="Brenda criança">
+            </div>
+            <div class="glam-photo">
+              <img src="fotos/brenda-jovem.jpeg" alt="Brenda hoje">
+            </div>
+
+            <div class="glam-msg">
+              “Brenda, sua presença ilumina a sala e sua garra inspira quem está ao seu redor.
+              Que essa nova fase seja marcada por oportunidades, boas surpresas e muitos sonhos realizados.
+              Continue seguindo com esse coração enorme e essa força que é só sua.”
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <!-- NAV PÁGINA 5 -->
+    <div class="nav-bar">
+      <button class="nav-btn" onclick="unflip(4)">&#x25C0;</button>
+      <button class="nav-btn" onclick="flip(5)">&#x25B6;</button>
+    </div>
+  </div>
+
+  <!-- ==================================== -->
+  <!-- PÁGINA 6 – CAROLAINE (CAROL)        -->
+  <!-- ==================================== -->
+  <div class="page" id="page6">
+    <div class="page-content">
+      <div class="page-glam tema-vermelho">
+        <div class="page-glam-inner">
+
+          <h2>Carolaine (Carol)</h2>
+
+          <div class="glam-layout">
+            <div class="glam-photo">
+              <img src="fotos/carolaine-crianca.jpeg" alt="Carolaine criança">
+            </div>
+            <div class="glam-photo">
+              <img src="fotos/carolaine-jovem.jpeg" alt="Carolaine hoje">
+            </div>
+
+            <div class="glam-msg">
+              “Carol, sua energia, sinceridade e coragem fazem toda a diferença.
+              Que esse novo capítulo seja cheio de desafios que te fortaleçam e conquistas que te façam sorrir ainda mais.
+              Acredite sempre na sua voz e no seu valor.”
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <!-- NAV PÁGINA 6 -->
+    <div class="nav-bar">
+      <button class="nav-btn" onclick="unflip(5)">&#x25C0;</button>
+      <button class="nav-btn" onclick="flip(6)">&#x25B6;</button>
+    </div>
+  </div>
+
+  <!-- ==================================== -->
+  <!-- PÁGINA 7 – CLAUDINEI (DINEI)        -->
+  <!-- ==================================== -->
+  <div class="page" id="page7">
+    <div class="page-content">
+      <div class="page-glam tema-azul">
+        <div class="page-glam-inner">
+
+          <h2>Claudinei (Dinei)</h2>
+
+          <div class="glam-layout">
+            <div class="glam-photo">
+              <img src="fotos/claudinei-crianca.jpeg" alt="Claudinei criança">
+            </div>
+            <div class="glam-photo">
+              <img src="fotos/claudinei-jovem.jpeg" alt="Claudinei hoje">
+            </div>
+
+            <div class="glam-msg">
+              “Dinei, seu jeito autêntico e espontâneo marca todos à sua volta.
+              Que a vida te leve por caminhos de aprendizado, crescimento e boas risadas.
+              Que você nunca perca essa essência única que tanto te define.”
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <!-- NAV PÁGINA 7 -->
+    <div class="nav-bar">
+      <button class="nav-btn" onclick="unflip(6)">&#x25C0;</button>
+      <button class="nav-btn" onclick="flip(7)">&#x25B6;</button>
+    </div>
+  </div>
+
+  <!-- ==================================== -->
+  <!-- PÁGINA 8 – DAVI (CAVANHAQUE)        -->
+  <!-- ==================================== -->
+  <div class="page" id="page8">
+    <div class="page-content">
+      <div class="page-glam tema-preto">
+        <div class="page-glam-inner">
+
+          <h2>Davi (Cavanhaque)</h2>
+
+          <div class="glam-layout">
+            <div class="glam-photo">
+              <img src="fotos/davi-crianca.jpeg" alt="Davi criança">
+            </div>
+            <div class="glam-photo">
+              <img src="fotos/davi-jovem.jpeg" alt="Davi hoje">
+            </div>
+
+            <div class="glam-msg">
+              “Davi, seu senso de humor e sua visão de mundo tornam os dias mais leves.
+              Que essa nova etapa venha carregada de oportunidades, conquistas e amadurecimento.
+              Continue sendo essa pessoa verdadeira, que não tem medo de ser quem é.”
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <!-- NAV PÁGINA 8 -->
+    <div class="nav-bar">
+      <button class="nav-btn" onclick="unflip(7)">&#x25C0;</button>
+      <button class="nav-btn" onclick="flip(8)">&#x25B6;</button>
+    </div>
+  </div>
+
+  <!-- ==================================== -->
+  <!-- PÁGINA 9 – DAVID                    -->
+  <!-- ==================================== -->
+  <div class="page" id="page9">
+    <div class="page-content">
+      <div class="page-glam tema-azul-marinho">
+        <div class="page-glam-inner">
+
+          <h2>David</h2>
+
+          <div class="glam-layout">
+            <div class="glam-photo">
+              <img src="fotos/david-crianca.jpeg" alt="David criança">
+            </div>
+            <div class="glam-photo">
+              <img src="fotos/david-jovem.jpeg" alt="David hoje">
+            </div>
+
+            <div class="glam-msg">
+              “David, sua calma e seu jeito observador revelam uma mente atenta e cheia de potencial.
+              Que essa nova fase seja rica em aprendizados e experiências que fortaleçam seus sonhos.
+              Acredite sempre no poder do seu caminho.”
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <!-- NAV PÁGINA 9 -->
+    <div class="nav-bar">
+      <button class="nav-btn" onclick="unflip(8)">&#x25C0;</button>
+      <button class="nav-btn" onclick="flip(9)">&#x25B6;</button>
+    </div>
+  </div>
+
+  <!-- ==================================== -->
+  <!-- PÁGINA 10 – EMANUEL (MAEL)          -->
+  <!-- ==================================== -->
+  <div class="page" id="page10">
+    <div class="page-content">
+      <div class="page-glam tema-preto">
+        <div class="page-glam-inner">
+
+          <h2>Emanuel (Mael)</h2>
+
+          <div class="glam-layout">
+            <div class="glam-photo">
+              <img src="fotos/emanuel-crianca.jpeg" alt="Emanuel criança">
+            </div>
+            <div class="glam-photo">
+              <img src="fotos/emanuel-jovem.jpeg" alt="Emanuel hoje">
+            </div>
+
+            <div class="glam-msg">
+              “Mael, sua presença marcante e seu jeito único fazem toda a diferença.
+              Que você siga firme em seus objetivos, sem medo de tentar, errar e recomeçar.
+              O futuro guarda muitas oportunidades para quem tem coragem de avançar.”
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <!-- NAV PÁGINA 10 -->
+    <div class="nav-bar">
+      <button class="nav-btn" onclick="unflip(9)">&#x25C0;</button>
+      <button class="nav-btn" onclick="flip(10)">&#x25B6;</button>
+    </div>
+  </div>
+
+  <!-- ==================================== -->
+  <!-- PÁGINA 11 – ERICA                   -->
+  <!-- ==================================== -->
+  <div class="page" id="page11">
+    <div class="page-content">
+      <div class="page-glam tema-preto">
+        <div class="page-glam-inner">
+
+          <h2>Erica</h2>
+
+          <div class="glam-layout">
+            <div class="glam-photo">
+              <img src="fotos/erica-crianca.jpeg" alt="Erica criança">
+            </div>
+            <div class="glam-photo">
+              <img src="fotos/erica-jovem.jpeg" alt="Erica hoje">
+            </div>
+
+            <div class="glam-msg">
+              “Erica, sua delicadeza e sua força caminham lado a lado.
+              Que essa nova jornada te traga confiança, autonomia e muitas vitórias.
+              Nunca esqueça o quanto você é capaz e importante por onde passa.”
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <!-- NAV PÁGINA 11 -->
+    <div class="nav-bar">
+      <button class="nav-btn" onclick="unflip(10)">&#x25C0;</button>
+      <button class="nav-btn" onclick="flip(11)">&#x25B6;</button>
+    </div>
+  </div>
+
+  <!-- ==================================== -->
+  <!-- PÁGINA 12 – LAUAN (OKARUM)          -->
+  <!-- ==================================== -->
+  <div class="page" id="page12">
+    <div class="page-content">
+      <div class="page-glam tema-vermelho">
+        <div class="page-glam-inner">
+
+          <h2>Lauan (Okarum)</h2>
+
+          <div class="glam-layout">
+            <div class="glam-photo">
+              <img src="fotos/lauan-crianca.jpeg" alt="Lauan criança">
+            </div>
+            <div class="glam-photo">
+              <img src="fotos/lauan-jovem.jpeg" alt="Lauan hoje">
+            </div>
+
+            <div class="glam-msg">
+              “Lauan, sua criatividade e autenticidade são marcas fortes da sua história.
+              Que os próximos passos sejam cheios de inspiração, oportunidades e conquistas.
+              Continue sendo essa pessoa intensa, que transforma o ambiente à sua volta.”
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <!-- NAV PÁGINA 12 -->
+    <div class="nav-bar">
+      <button class="nav-btn" onclick="unflip(11)">&#x25C0;</button>
+      <button class="nav-btn" onclick="flip(12)">&#x25B6;</button>
+    </div>
+  </div>
+
+  <!-- ==================================== -->
+  <!-- PÁGINA 13 – LETÍCIA (LELE)          -->
+  <!-- ==================================== -->
+  <div class="page" id="page13">
+    <div class="page-content">
+      <div class="page-glam tema-azul">
+        <div class="page-glam-inner">
+
+          <h2>Letícia (Lele)</h2>
+
+          <div class="glam-layout">
+            <div class="glam-photo">
+              <img src="fotos/leticia-crianca.jpeg" alt="Letícia criança">
+            </div>
+            <div class="glam-photo">
+              <img src="fotos/leticia-jovem.jpeg" alt="Letícia hoje">
+            </div>
+
+            <div class="glam-msg">
+              “Lele, sua doçura e sua responsabilidade caminham juntas.
+              Que essa nova etapa seja cheia de experiências que te façam crescer ainda mais.
+              O mundo precisa dessa sensibilidade e dessa força que existem em você.”
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <!-- NAV PÁGINA 13 -->
+    <div class="nav-bar">
+      <button class="nav-btn" onclick="unflip(12)">&#x25C0;</button>
+      <button class="nav-btn" onclick="flip(13)">&#x25B6;</button>
+    </div>
+  </div>
+
+  <!-- ==================================== -->
+  <!-- PÁGINA 14 – LUCAS                   -->
+  <!-- ==================================== -->
+  <div class="page" id="page14">
+    <div class="page-content">
+      <div class="page-glam tema-preto">
+        <div class="page-glam-inner">
+
+          <h2>Lucas</h2>
+
+          <div class="glam-layout">
+            <div class="glam-photo">
+              <img src="fotos/lucas-crianca.jpeg" alt="Lucas criança">
+            </div>
+            <div class="glam-photo">
+              <img src="fotos/lucas-jovem.jpeg" alt="Lucas hoje">
+            </div>
+
+            <div class="glam-msg">
+              “Lucas, seu jeito observador e sua postura firme mostram uma grande maturidade.
+              Que essa nova fase seja repleta de descobertas, aprendizados e escolhas que te levem longe.
+              Acredite sempre no seu potencial e nos caminhos que você pode construir.”
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <!-- NAV PÁGINA 14 -->
+    <div class="nav-bar">
+      <button class="nav-btn" onclick="unflip(13)">&#x25C0;</button>
+      <button class="nav-btn" onclick="flip(14)">&#x25B6;</button>
+    </div>
+  </div>
+
+  <!-- ==================================== -->
+  <!-- PÁGINA 15 – LUIS MIGUEL (BATATA)    -->
+  <!-- ==================================== -->
+  <div class="page" id="page15">
+    <div class="page-content">
+      <div class="page-glam tema-preto">
+        <div class="page-glam-inner">
+
+          <h2>Luis Miguel (Batata)</h2>
+
+          <div class="glam-layout">
+            <div class="glam-photo">
+              <img src="fotos/luis-miguel-crianca.jpeg" alt="Luis Miguel criança">
+            </div>
+            <div class="glam-photo">
+              <img src="fotos/luis-miguel-jovem.jpeg" alt="Luis Miguel hoje">
+            </div>
+
+            <div class="glam-msg">
+              “Batata, sua alegria, seu bom humor e seu jeito espontâneo tornam qualquer ambiente mais leve.
+              Que a vida te traga muitas oportunidades para mostrar esse brilho único que você tem.
+              Siga confiante, sem perder essa autenticidade tão especial.”
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <!-- NAV PÁGINA 15 -->
+    <div class="nav-bar">
+      <button class="nav-btn" onclick="unflip(14)">&#x25C0;</button>
+      <button class="nav-btn" onclick="flip(15)">&#x25B6;</button>
+    </div>
+  </div>
+
+  <!-- ==================================== -->
+  <!-- PÁGINA 16 – LUIS OTAVIO (LULU)      -->
+  <!-- ==================================== -->
+  <div class="page" id="page16">
+    <div class="page-content">
+      <div class="page-glam tema-preto">
+        <div class="page-glam-inner">
+
+          <h2>Luis Otavio (Lulu)</h2>
+
+          <div class="glam-layout">
+            <div class="glam-photo">
+              <img src="fotos/luis-otavio-crianca.jpeg" alt="Luis Otavio criança">
+            </div>
+            <div class="glam-photo">
+              <img src="fotos/luis-otavio-jovem.jpeg" alt="Luis Otavio hoje">
+            </div>
+
+            <div class="glam-msg">
+              “Lulu, seu jeito reservado esconde uma grande sensibilidade e inteligência.
+              Que essa nova etapa seja cheia de oportunidades para você mostrar ainda mais quem é.
+              O mundo precisa de pessoas que pensam, sentem e constroem com responsabilidade como você.”
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <!-- NAV PÁGINA 16 -->
+    <div class="nav-bar">
+      <button class="nav-btn" onclick="unflip(15)">&#x25C0;</button>
+      <button class="nav-btn" onclick="flip(16)">&#x25B6;</button>
+    </div>
+  </div>
+
+  <!-- ==================================== -->
+  <!-- PÁGINA 17 – MARCOS                  -->
+  <!-- ==================================== -->
+  <div class="page" id="page17">
+    <div class="page-content">
+      <div class="page-glam tema-preto">
+        <div class="page-glam-inner">
+
+          <h2>Marcos</h2>
+
+          <div class="glam-layout">
+            <div class="glam-photo">
+              <img src="fotos/marcos-crianca.jpeg" alt="Marcos criança">
+            </div>
+            <div class="glam-photo">
+              <img src="fotos/marcos-jovem.jpeg" alt="Marcos hoje">
+            </div>
+
+            <div class="glam-msg">
+              “Marcos, sua presença firme e seu jeito direto mostram muita personalidade.
+              Que esse novo momento te traga maturidade, crescimento e oportunidades para escolher bem seus caminhos.
+              Você tem muito potencial para conquistar o que deseja.”
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <!-- NAV PÁGINA 17 -->
+    <div class="nav-bar">
+      <button class="nav-btn" onclick="unflip(16)">&#x25C0;</button>
+      <button class="nav-btn" onclick="flip(17)">&#x25B6;</button>
+    </div>
+  </div>
+
+  <!-- ==================================== -->
+  <!-- PÁGINA 18 – MARIA EDUARDA (DUDA)    -->
+  <!-- ==================================== -->
+  <div class="page" id="page18">
+    <div class="page-content">
+      <div class="page-glam tema-branco">
+        <div class="page-glam-inner">
+
+          <h2>Maria Eduarda (Duda)</h2>
+
+          <div class="glam-layout">
+            <div class="glam-photo">
+              <img src="fotos/maria-eduarda-crianca.jpeg" alt="Maria Eduarda criança">
+            </div>
+            <div class="glam-photo">
+              <img src="fotos/maria-eduarda-jovem.jpeg" alt="Maria Eduarda hoje">
+            </div>
+
+            <div class="glam-msg">
+              “Duda, sua delicadeza, seu sorriso e seu cuidado com as pessoas encantam o ambiente.
+              Que essa nova fase te traga experiências lindas, amizades verdadeiras e muitos projetos realizados.
+              Mantenha essa luz que é tão sua.”
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <!-- NAV PÁGINA 18 -->
+    <div class="nav-bar">
+      <button class="nav-btn" onclick="unflip(17)">&#x25C0;</button>
+      <button class="nav-btn" onclick="flip(18)">&#x25B6;</button>
+    </div>
+  </div>
+
+  <!-- ==================================== -->
+  <!-- PÁGINA 19 – MARIA VITÓRIA (MAVVI)   -->
+  <!-- ==================================== -->
+  <div class="page" id="page19">
+    <div class="page-content">
+      <div class="page-glam tema-roxo">
+        <div class="page-glam-inner">
+
+          <h2>Maria Vitória (Mavvi)</h2>
+
+          <div class="glam-layout">
+            <div class="glam-photo">
+              <img src="fotos/maria-vitoria-crianca.jpeg" alt="Maria Vitória criança">
+            </div>
+            <div class="glam-photo">
+              <img src="fotos/maria-vitoria-jovem.jpeg" alt="Maria Vitória hoje">
+            </div>
+
+            <div class="glam-msg">
+              “Mavvi, sua intensidade, sua sensibilidade e seu olhar profundo sobre o mundo são marcas muito fortes.
+              Que essa nova jornada te ajude a transformar sentimentos em força e sonhos em realidade.
+              O mundo é mais bonito com a sua forma de enxergá-lo.”
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <!-- NAV PÁGINA 19 -->
+    <div class="nav-bar">
+      <button class="nav-btn" onclick="unflip(18)">&#x25C0;</button>
+      <button class="nav-btn" onclick="flip(19)">&#x25B6;</button>
+    </div>
+  </div>
+
+  <!-- ==================================== -->
+  <!-- PÁGINA 20 – NATÁLIA (NATY)          -->
+  <!-- ==================================== -->
+  <div class="page" id="page20">
+    <div class="page-content">
+      <div class="page-glam tema-vinho">
+        <div class="page-glam-inner">
+
+          <h2>Natália (Naty)</h2>
+
+          <div class="glam-layout">
+            <div class="glam-photo">
+              <img src="fotos/natalia-crianca.jpeg" alt="Natália criança">
+            </div>
+            <div class="glam-photo">
+              <img src="fotos/natalia-jovem.jpeg" alt="Natália hoje">
+            </div>
+
+            <div class="glam-msg">
+              “Naty, sua força, sua intensidade e seu carinho deixam marcas em quem convive com você.
+              Que esse novo ciclo venha cheio de amadurecimento, amor próprio e conquistas.
+              Você merece viver histórias lindas e ser muito feliz.”
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <!-- NAV PÁGINA 20 -->
+    <div class="nav-bar">
+      <button class="nav-btn" onclick="unflip(19)">&#x25C0;</button>
+      <button class="nav-btn" onclick="flip(20)">&#x25B6;</button>
+    </div>
+  </div>
+
+  <!-- ==================================== -->
+  <!-- PÁGINA 21 – PAMELA (PAM PAM)        -->
+  <!-- ==================================== -->
+  <div class="page" id="page21">
+    <div class="page-content">
+      <div class="page-glam tema-rosa">
+        <div class="page-glam-inner">
+
+          <h2>Pamela (Pam Pam)</h2>
+
+          <div class="glam-layout">
+            <div class="glam-photo">
+              <img src="fotos/pamela-crianca.jpeg" alt="Pamela criança">
+            </div>
+            <div class="glam-photo">
+              <img src="fotos/pamela-jovem.jpeg" alt="Pamela hoje">
+            </div>
+
+            <div class="glam-msg">
+              “Pam Pam, sua alegria, seu cuidado e seu carinho com todos tornam a convivência especial.
+              Que essa nova fase seja cheia de descobertas, amores, amizade verdadeira e muitos sorrisos.
+              Você tem uma forma muito linda de tocar as pessoas.”
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <!-- NAV PÁGINA 21 -->
+    <div class="nav-bar">
+      <button class="nav-btn" onclick="unflip(20)">&#x25C0;</button>
+      <button class="nav-btn" onclick="flip(21)">&#x25B6;</button>
+    </div>
+  </div>
+
+  <!-- ==================================== -->
+  <!-- PÁGINA 22 – PEDRO                   -->
+  <!-- ==================================== -->
+  <div class="page" id="page22">
+    <div class="page-content">
+      <div class="page-glam tema-vermelho">
+        <div class="page-glam-inner">
+
+          <h2>Pedro</h2>
+
+          <div class="glam-layout">
+            <div class="glam-photo">
+              <img src="fotos/pedro-crianca.jpeg" alt="Pedro criança">
+            </div>
+            <div class="glam-photo">
+              <img src="fotos/pedro-jovem.jpeg" alt="Pedro hoje">
+            </div>
+
+            <div class="glam-msg">
+              “Pedro, sua energia, seu senso de humor e sua presença fazem diferença nos nossos dias.
+              Que essa nova etapa te traga boas oportunidades, crescimento e muitas histórias boas para contar.
+              Use toda essa força a favor dos seus sonhos.”
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <!-- NAV PÁGINA 22 -->
+    <div class="nav-bar">
+      <button class="nav-btn" onclick="unflip(21)">&#x25C0;</button>
+      <button class="nav-btn" onclick="flip(22)">&#x25B6;</button>
+    </div>
+  </div>
+
+  <!-- ==================================== -->
+  <!-- PÁGINA 23 – VIVIAN (VIVI)           -->
+  <!-- ==================================== -->
+  <div class="page" id="page23">
+    <div class="page-content">
+      <div class="page-glam tema-preto">
+        <div class="page-glam-inner">
+
+          <h2>Vivian (Vivi)</h2>
+
+          <div class="glam-layout">
+            <div class="glam-photo">
+              <img src="fotos/vivian-crianca.jpeg" alt="Vivian criança">
+            </div>
+            <div class="glam-photo">
+              <img src="fotos/vivian-jovem.jpeg" alt="Vivian hoje">
+            </div>
+
+            <div class="glam-msg">
+              “Vivi, seu carinho, seu olhar atento e seu jeito de se importar com os outros fazem toda a diferença.
+              Que esse novo ciclo te traga coragem, confiança e muitas conquistas.
+              Você tem um brilho muito especial – nunca duvide disso.”
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <!-- NAV PÁGINA 23 -->
+    <div class="nav-bar">
+      <button class="nav-btn" onclick="unflip(22)">&#x25C0;</button>
+      <button class="nav-btn" onclick="flip(23)">&#x25B6;</button>
+    </div>
+  </div>
+
+<!-- ==================================== -->
+<!-- PÁGINA 24 – NOVA VIA / ENCERRAMENTO -->
+<!-- ==================================== -->
+<div class="page" id="page24">
+  <div class="page-content">
+    <div class="page-glam tema-preto">
+      <div class="page-glam-inner novavia-inner">
+
+        <!--<h2>NOVA VIA</h2>-->
+
+        <!-- Brasão centralizado -->
+        <div class="novavia-logo">
+          <img src="fotos/brasao_t.png" alt="Brasão Nova Via">
+        </div>
+
+        <!-- Texto explicativo -->
+        <div class="novavia-box">
+          “Nova Via” significa literalmente <strong>“novo caminho”</strong>.
+          É o símbolo da fase que começa a partir daqui: um percurso diferente,
+          em que cada um de vocês segue escrevendo a própria história.
+
+          O dragão no brasão representa força, coragem, proteção e a
+          capacidade de enfrentar desafios sem abrir mão de quem vocês são.
+          Ele guarda tudo o que foi vivido até aqui e, ao mesmo tempo,
+          aponta para o futuro.
+
+          Que esta <strong>Nova Via</strong> seja feita de escolhas conscientes,
+          de sonhos grandes e de passos firmes. Que vocês levem consigo as
+          lembranças, os aprendizados e os laços construídos nesta escola.
+
+          <br><br>
+          Com todo meu carinho, admiração e orgulho,
+          <br>
+          <strong>Professora Pat</strong>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- NAV PÁGINA 24 -->
+  <div class="nav-bar">
+    <button class="nav-btn" onclick="unflip(23)">&#x25C0;</button>
+    <button class="nav-btn nav-btn-disabled">&#x25B6;</button>
+  </div>
+</div>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
