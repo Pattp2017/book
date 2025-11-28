@@ -33,7 +33,8 @@ body {
 
 /* PÁGINAS */
 .page {
-  width: 60%;
+  width: 60%;          /* desktop fica como você já gostou */
+  max-width: 900px;    /* não passa disso em telas grandes */
   height: 100%;
   background: #ffffff;
   padding: 30px;
@@ -45,7 +46,26 @@ body {
   box-shadow: 0 0 8px rgba(0,0,0,0.4);
   overflow: hidden;
   backface-visibility: hidden;
+  margin: 0 auto;      /* garante centralizado */
 }
+
+/* Celular / telas menores */
+@media (max-width: 768px) {
+  .page {
+    width: 100%;       /* ocupa 100% da largura da tela */
+    max-width: none;
+    padding: 10px 0;
+  }
+
+  .cover,
+  .page-glam {
+    width: 94%;        /* só uma margenzinha lateral */
+    height: auto;
+    margin: 0 auto;
+    padding: 24px 16px 40px;
+  }
+}
+
 
 /* ordem das páginas (capa por cima inicialmente) */
 /* quanto MAIOR o número, mais "por cima" a página fica */
