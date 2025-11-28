@@ -450,4 +450,23 @@ body {
   color: var(--gold);
 }
 
+/* ===================================== */
+/* PADRÃO ÚNICO PARA CAPA E PÁG. ALUNOS  */
+/* ===================================== */
+
+/* Tamanho do cartão (capa + páginas internas) */
+.cover,
+.page-glam {
+  width: min(900px, 92vw);        /* mesma largura, limitada pela tela */
+  min-height: min(540px, 78vh);   /* mesma “altura base” em todas */
+  margin: 0 auto;                 /* centralizado */
+}
+
+/* Garante que tudo fique dentro do cartão, sem vazar sombra */
+.cover-inner,
+.page-glam-inner {
+  max-width: 90%;
+  margin: 0 auto;
+}
+
 
