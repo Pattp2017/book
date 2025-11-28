@@ -25,20 +25,18 @@ body {
 /* LIVRO (CONTAINER GERAL) */
 .book {
   width: 100%;
-  min-height: 100vh;       /* pode crescer além da altura da tela */
+  min-height: 100vh;          /* pode crescer além da altura da tela */
   display: flex;
-  align-items: flex-start; /* começa lá em cima, não no meio */
+  align-items: flex-start;    /* começa lá em cima */
   justify-content: center;
-  padding: 16px 0 80px;    /* espaço em cima e embaixo (pras setas) */
+  padding: 16px 0 80px;       /* espaço em cima e embaixo (pras setas) */
 }
 
-
-/* PÁGINAS – tamanho geral */
-/* PÁGINAS – uma por cima da outra (pra virar com flip) */
+/* PÁGINAS – empilhadas para o efeito de virada */
 .page {
   width: 100%;
-  max-width: 900px;           /* largura máxima em desktop */
-  min-height: calc(100vh - 96px); /* garante pelo menos a altura da tela */
+  max-width: 900px;                 /* largura máxima em desktop */
+  min-height: calc(100vh - 96px);   /* pelo menos a altura da tela */
   background: transparent;
   padding: 0;
 
@@ -50,30 +48,11 @@ body {
   transition: transform 1s;
 
   box-shadow: none;
-  overflow: visible;          /* ⭐ NÃO corta mais o conteúdo */
+  overflow: visible;                /* não corta conteúdo interno */
   backface-visibility: hidden;
 }
 
-/* Celular / telas menores */
-@media (max-width: 768px) {
-  .page {
-    width: 100%;       /* ocupa 100% da largura da tela */
-    max-width: none;
-    padding: 10px 0;
-  }
-
-  .cover,
-  .page-glam {
-    width: 94%;        /* só uma margenzinha lateral */
-    height: auto;
-    margin: 0 auto;
-    padding: 24px 16px 40px;
-  }
-}
-
-
 /* ordem das páginas (capa por cima inicialmente) */
-/* quanto MAIOR o número, mais "por cima" a página fica */
 #page1  { z-index: 24; }  /* capa */
 #page2  { z-index: 23; }  /* Ana Carolina */
 #page3  { z-index: 22; }  /* Andressa */
@@ -99,22 +78,19 @@ body {
 #page23 { z-index: 2;  }  /* Vivian */
 #page24 { z-index: 1;  }  /* Encerramento */
 
-
-/* CONTEÚDO DA PÁGINA – centraliza tudo igual (capa e alunos) */
+/* CONTEÚDO DA PÁGINA – centraliza tudo (capa e alunos) */
 .page-content {
-  height: auto;              /* deixa crescer conforme o conteúdo */
   width: 100%;
+  height: auto;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 0;                /* o espaçamento já vem da .book e dos cartões */
+  padding: 0;
 }
-
 
 /* efeito da virada */
 .page.flipped {
   transform: rotateY(-180deg);
- /* z-index: 0;  quando vira, vai para trás */
 }
 
 /* NAV INFERIOR (setas) */
@@ -156,10 +132,27 @@ body {
   box-shadow: none;
 }
 
-/* ===================== */
-/* CAPA GLAMOUROSA      */
-/* ===================== */
+/* ===================================== */
+/* CARTÃO PADRÃO (CAPA + PÁGINAS ALUNO) */
+/* ===================================== */
 
+.cover,
+.page-glam {
+  position: relative;
+  width: min(900px, 92vw);         /* mesma largura para todos */
+  min-height: min(540px, 78vh);    /* mesma altura base */
+  margin: 0 auto;
+  border-radius: 16px;
+  box-shadow:
+    0 0 0 1px rgba(0, 0, 0, 0.6),
+    0 24px 60px rgba(0, 0, 0, 0.85);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+/* CAPA GLAMOUROSA */
 .cover-wrapper {
   width: 100%;
   height: 100%;
@@ -170,23 +163,11 @@ body {
 }
 
 .cover {
-  position: relative;
-  width: 88%;
-  height: 88%;
-  padding: 40px 60px 50px; /* menos padding em cima/baixo, mais nas laterais */
-
+  padding: 40px 60px 50px;
   background: linear-gradient(145deg, #0b0b0f 0%, #050608 55%, #111217 100%);
-  border-radius: 16px;
-  box-shadow:
-    0 0 0 1px rgba(0, 0, 0, 0.6),
-    0 24px 60px rgba(0, 0, 0, 0.85);
   color: var(--text);
-
-  display: flex;
-  align-items: flex-start;   /* conteúdo mais para cima */
-  justify-content: center;
+  align-items: flex-start;   /* conteúdo um pouco mais para cima */
 }
-
 
 .cover::before,
 .cover::after {
@@ -207,10 +188,9 @@ body {
   position: relative;
   text-align: center;
   width: 100%;
-  max-width: 780px;   /* deixa mais largo */
-  margin-top: 40px;   /* distancia do topo da moldura */
+  max-width: 780px;
+  margin: 40px auto 0;   /* distância do topo da moldura */
 }
-
 
 .eyebrow {
   font-size: 0.9rem;
@@ -284,37 +264,20 @@ body {
 }
 
 /* ===================== */
-/* PÁGINA GLAMOROSA DO ALUNO */
+/* PÁGINA GLAMOUROSA DO ALUNO */
 /* ===================== */
 
 .page-glam {
-  position: relative;
-  width: 88%;
-  height: 88%;
   padding: 60px 40px;
-  border-radius: 16px;
   color: var(--gold);
-
   background: linear-gradient(
     145deg,
     var(--tema-fundo, #050608) 0%,
     var(--tema-fundo, #050608) 55%,
     #111217 100%
   );
-
-  box-shadow:
-    0 0 0 1px rgba(0, 0, 0, 0.6),
-    0 24px 60px rgba(0, 0, 0, 0.85);
-
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-
-  margin: auto;
 }
 
-/* Moldura dourada dupla */
 .page-glam::before,
 .page-glam::after {
   content: "";
@@ -383,16 +346,7 @@ body {
   color: var(--gold);
 }
 
-/* Responsivo (para celular) */
-@media (max-width: 700px) {
-  .glam-layout {
-    grid-template-columns: 1fr;
-  }
-  .glam-photo {
-    height: 260px;
-  }
-}
-/* Brasão da página final */
+/* Brasão da página final (se usar essa classe) */
 .brasao-final {
   grid-column: span 2;
   display: flex;
@@ -404,21 +358,6 @@ body {
   max-width: 260px;
   height: auto;
 }
-
-/* ===================== */
-/* TEMAS DE COR POR ALUNO */
-/* ===================== */
-
-.tema-preto        { --tema-fundo:#050608; }
-.tema-vermelho     { --tema-fundo:#8b1116; }
-.tema-lilas        { --tema-fundo:#7b4dbb; }
-.tema-verde        { --tema-fundo:#1b6f3b; }
-.tema-azul         { --tema-fundo:#1c4f9c; }
-.tema-azul-marinho { --tema-fundo:#0b224c; }
-.tema-branco       { --tema-fundo:#d9d9d9; }
-.tema-roxo         { --tema-fundo:#4b1366; }
-.tema-vinho        { --tema-fundo:#5b0a2e; }
-.tema-rosa         { --tema-fundo:#b83272; }
 
 /* ===== Página final NOVA VIA ===== */
 
@@ -435,7 +374,7 @@ body {
 }
 
 .novavia-logo img {
-  max-width: 150px;   /* controla o tamanho do brasão */
+  max-width: 150px;
   height: auto;
 }
 
@@ -450,23 +389,48 @@ body {
   color: var(--gold);
 }
 
-/* ===================================== */
-/* PADRÃO ÚNICO PARA CAPA E PÁG. ALUNOS  */
-/* ===================================== */
+/* TEMAS DE COR POR ALUNO */
 
-/* Tamanho do cartão (capa + páginas internas) */
-.cover,
-.page-glam {
-  width: min(900px, 92vw);        /* mesma largura, limitada pela tela */
-  min-height: min(540px, 78vh);   /* mesma “altura base” em todas */
-  margin: 0 auto;                 /* centralizado */
+.tema-preto        { --tema-fundo:#050608; }
+.tema-vermelho     { --tema-fundo:#8b1116; }
+.tema-lilas        { --tema-fundo:#7b4dbb; }
+.tema-verde        { --tema-fundo:#1b6f3b; }
+.tema-azul         { --tema-fundo:#1c4f9c; }
+.tema-azul-marinho { --tema-fundo:#0b224c; }
+.tema-branco       { --tema-fundo:#d9d9d9; }
+.tema-roxo         { --tema-fundo:#4b1366; }
+.tema-vinho        { --tema-fundo:#5b0a2e; }
+.tema-rosa         { --tema-fundo:#b83272; }
+
+/* ===================== */
+/* RESPONSIVO – CELULAR  */
+/* ===================== */
+
+@media (max-width: 768px) {
+
+  .page {
+    max-width: 100%;
+    min-height: auto;
+  }
+
+  .cover,
+  .page-glam {
+    width: 94vw;
+    min-height: auto;
+    padding: 24px 16px 40px;
+  }
+
+  .page-glam-inner,
+  .cover-inner {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .glam-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .glam-photo {
+    height: 260px;
+  }
 }
-
-/* Garante que tudo fique dentro do cartão, sem vazar sombra */
-.cover-inner,
-.page-glam-inner {
-  max-width: 90%;
-  margin: 0 auto;
-}
-
-
