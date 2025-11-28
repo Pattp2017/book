@@ -25,27 +25,32 @@ body {
 /* LIVRO (CONTAINER GERAL) */
 .book {
   width: 100%;
-  height: 100vh;
+  min-height: 100vh;       /* pode crescer além da altura da tela */
   display: flex;
-  align-items: center;
+  align-items: flex-start; /* começa lá em cima, não no meio */
   justify-content: center;
+  padding: 16px 0 80px;    /* espaço em cima e embaixo (pras setas) */
 }
 
+
 /* PÁGINAS – tamanho geral */
+/* PÁGINAS – uma por cima da outra (pra virar com flip) */
 .page {
-  width: 100%;          /* ocupa a largura toda disponível */
-  max-width: 900px;     /* não passa disso em telas grandes (fica elegante) */
-  height: 100%;
-  background: transparent;   /* deixa o fundo da página transparente */
+  width: 100%;
+  max-width: 900px;           /* largura máxima em desktop */
+  min-height: calc(100vh - 96px); /* garante pelo menos a altura da tela */
+  background: transparent;
   padding: 0;
+
   position: absolute;
   top: 0;
   left: 50%;
-  transform: translateX(-50%);  /* centraliza a página em qualquer navegador */
+  transform: translateX(-50%);
   transform-origin: left;
   transition: transform 1s;
-  box-shadow: none;            /* sombra fica nos cartões internos (cover/page-glam) */
-  overflow: hidden;
+
+  box-shadow: none;
+  overflow: visible;          /* ⭐ NÃO corta mais o conteúdo */
   backface-visibility: hidden;
 }
 
@@ -97,11 +102,14 @@ body {
 
 /* CONTEÚDO DA PÁGINA – centraliza tudo igual (capa e alunos) */
 .page-content {
-  height: 100%;
+  height: auto;              /* deixa crescer conforme o conteúdo */
+  width: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
+  padding: 0;                /* o espaçamento já vem da .book e dos cartões */
 }
+
 
 /* efeito da virada */
 .page.flipped {
@@ -441,4 +449,5 @@ body {
   line-height: 1.6;
   color: var(--gold);
 }
+
 
