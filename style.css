@@ -31,22 +31,22 @@ body {
   justify-content: center;
 }
 
-/* PÁGINAS */
+/* PÁGINAS – tamanho geral */
 .page {
-  width: 60%;          /* desktop fica como você já gostou */
-  max-width: 900px;    /* não passa disso em telas grandes */
+  width: 100%;          /* ocupa a largura toda disponível */
+  max-width: 900px;     /* não passa disso em telas grandes (fica elegante) */
   height: 100%;
-  background: #ffffff;
-  padding: 30px;
+  background: transparent;   /* deixa o fundo da página transparente */
+  padding: 0;
   position: absolute;
   top: 0;
-  left: 0;
+  left: 50%;
+  transform: translateX(-50%);  /* centraliza a página em qualquer navegador */
   transform-origin: left;
   transition: transform 1s;
-  box-shadow: 0 0 8px rgba(0,0,0,0.4);
+  box-shadow: none;            /* sombra fica nos cartões internos (cover/page-glam) */
   overflow: hidden;
   backface-visibility: hidden;
-  margin: 0 auto;      /* garante centralizado */
 }
 
 /* Celular / telas menores */
@@ -441,3 +441,4 @@ body {
   line-height: 1.6;
   color: var(--gold);
 }
+
