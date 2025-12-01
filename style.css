@@ -448,12 +448,15 @@ body {
 /* Garantimos que o cartão nunca ultrapasse a altura definida */
 .cover,
 .page-glam {
-  height: min(540px, 78vh);        /* 🔥 Altura fixa REAL */
+  width: min(900px, 92vw);
+  height: min(820px, 92vh);   /* 🔥 AGORA A PÁGINA FICA MAIOR */
+  border-radius: 16px;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  overflow: hidden;               /* impede crescer para fora */
+  overflow: hidden;
 }
+
 
 /* Área interna que vai scrollar caso o texto seja grande */
 .cover-inner,
@@ -479,5 +482,6 @@ body {
 .cover-inner::-webkit-scrollbar-track {
   background: transparent;
 }
+
 
 
