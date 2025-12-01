@@ -441,3 +441,43 @@ body {
     height: 260px;
   }
 }
+/* ========================================= */
+/* 🔧 CORREÇÃO: TODAS AS PÁGINAS COM MESMO TAMANHO */
+/* ========================================= */
+
+/* Garantimos que o cartão nunca ultrapasse a altura definida */
+.cover,
+.page-glam {
+  height: min(540px, 78vh);        /* 🔥 Altura fixa REAL */
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  overflow: hidden;               /* impede crescer para fora */
+}
+
+/* Área interna que vai scrollar caso o texto seja grande */
+.cover-inner,
+.page-glam-inner {
+  flex: 1;
+  overflow-y: auto;               /* 🔥 rolagem interna QUANDO necessário */
+  padding-right: 6px;             /* espaço para a barra de rolagem */
+}
+
+/* Ajuste opcional da rolagem estilizada */
+.page-glam-inner::-webkit-scrollbar,
+.cover-inner::-webkit-scrollbar {
+  width: 6px;
+}
+
+.page-glam-inner::-webkit-scrollbar-thumb,
+.cover-inner::-webkit-scrollbar-thumb {
+  background: rgba(212, 175, 55, 0.4);
+  border-radius: 4px;
+}
+
+.page-glam-inner::-webkit-scrollbar-track,
+.cover-inner::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+
