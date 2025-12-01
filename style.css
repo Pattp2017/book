@@ -22,33 +22,33 @@ body {
   padding: 0;
 }
 
-/* LIVRO (CONTAINER GERAL) */
+/* =============================== */
+/* LIVRO (CONTAINER GERAL)        */
+/* =============================== */
+
 .book {
   width: 100%;
-  min-height: 100vh;          /* pode crescer além da altura da tela */
+  min-height: 100vh;
   display: flex;
-  align-items: flex-start;    /* começa lá em cima */
+  align-items: center;           /* centraliza o “livro” na vertical */
   justify-content: center;
-  padding: 16px 0 80px;       /* espaço em cima e embaixo (pras setas) */
+  padding: 24px 0 80px;
+  perspective: 1800px;          /* profundidade pro efeito 3D */
 }
 
-/* PÁGINAS – empilhadas para o efeito de virada */
+/* CADA PÁGINA DO LIVRO */
 .page {
-  width: 100%;
-  max-width: 900px;                 /* largura máxima em desktop */
-  min-height: calc(100vh - 96px);   /* pelo menos a altura da tela */
-  background: transparent;
-  padding: 0;
-
   position: absolute;
-  top: 0;
+  top: 50%;
   left: 50%;
-  transform: translateX(-50%);
-  transform-origin: left;
-  transition: transform 1s;
-
-  box-shadow: none;
-  overflow: visible;                /* não corta conteúdo interno */
+  width: min(900px, 92vw);       /* largura única em todas */
+  min-height: min(540px, 78vh);  /* altura base única */
+  transform: translate(-50%, -50%);
+  transform-origin: left center;
+  transform-style: preserve-3d;
+  transition: transform 0.9s ease;
+  background: transparent;
+  overflow: visible;
   backface-visibility: hidden;
 }
 
@@ -88,12 +88,15 @@ body {
   padding: 0;
 }
 
-/* efeito da virada */
+/* efeito da virada – mantém o centro + rotação 3D */
 .page.flipped {
-  transform: rotateY(-180deg);
+  transform: translate(-50%, -50%) rotateY(-180deg);
 }
 
-/* NAV INFERIOR (setas) */
+/* =============================== */
+/* NAV INFERIOR (setas)            */
+/* =============================== */
+
 .nav-bar {
   position: absolute;
   bottom: 20px;
@@ -136,11 +139,12 @@ body {
 /* CARTÃO PADRÃO (CAPA + PÁGINAS ALUNO) */
 /* ===================================== */
 
+/* o cartão ocupa 100% da área da .page */
 .cover,
 .page-glam {
   position: relative;
-  width: min(900px, 92vw);         /* mesma largura para todos */
-  min-height: min(540px, 78vh);    /* mesma altura base */
+  width: 100%;
+  height: 100%;
   margin: 0 auto;
   border-radius: 16px;
   box-shadow:
@@ -152,7 +156,10 @@ body {
   justify-content: center;
 }
 
-/* CAPA GLAMOUROSA */
+/* ===================== */
+/* CAPA GLAMOUROSA       */
+/* ===================== */
+
 .cover-wrapper {
   width: 100%;
   height: 100%;
@@ -264,7 +271,7 @@ body {
 }
 
 /* ===================== */
-/* PÁGINA GLAMOUROSA DO ALUNO */
+/* PÁGINA GLAMOROSA DO ALUNO */
 /* ===================== */
 
 .page-glam {
@@ -409,14 +416,14 @@ body {
 @media (max-width: 768px) {
 
   .page {
-    max-width: 100%;
-    min-height: auto;
+    width: 100vw;
+    min-height: 100vh;
   }
 
   .cover,
   .page-glam {
     width: 94vw;
-    min-height: auto;
+    height: auto;
     padding: 24px 16px 40px;
   }
 
