@@ -33,7 +33,7 @@ body {
   align-items: center;
   justify-content: center;
   padding: 24px 0 80px;
-  perspective: 1800px;            /* 🔸 dá profundidade pro efeito de virar */
+  perspective: 1800px;            /* profundidade pro efeito de virar */
 }
 
 /* Cada página */
@@ -82,7 +82,7 @@ body {
   width: 100%;
   height: 100%;
   display: flex;
-  align-items: center;
+  align-items: stretch;      /* todas as páginas preenchem a altura */
   justify-content: center;
 }
 
@@ -158,7 +158,7 @@ body {
   width: 100%;
   height: 100%;
   display: flex;
-  align-items: center;
+  align-items: stretch;
   justify-content: center;
   padding: 0;
 }
@@ -300,12 +300,16 @@ body {
   margin: 0 auto;
   text-align: center;
   color: var(--gold);
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
 }
 
+/* Nome do aluno */
 .page-glam-inner h2 {
   font-family: "Times New Roman", Georgia, serif;
   font-size: 2rem;
-  margin-bottom: 30px;
+  margin-bottom: 10px;
   color: var(--gold);
 }
 
@@ -314,10 +318,10 @@ body {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 22px;
-  margin-bottom: 30px;
+  margin-bottom: 10px;
 }
 
-/* 📸 Fotos – agora sempre inteiras */
+/* Bloco de foto com altura padrão */
 .glam-photo {
   border-radius: 12px;
   border: 2px solid var(--gold);
@@ -326,15 +330,19 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  overflow: hidden;          /* esconde o excesso da imagem */
+  height: 230px;             /* ALTURA PADRÃO DAS FOTOS (ajuste se quiser) */
 }
 
+/* Imagem se adapta ao espaço reservado */
 .glam-photo img {
-  max-width: 100%;
-  height: auto;          /* mantém a foto inteira */
+  width: 100%;
+  height: 100%;
+  object-fit: cover;         /* preenche o bloco mantendo proporção */
   display: block;
 }
 
-/* MENSAGEM */
+/* MENSAGEM – altura visual mais padronizada */
 .glam-msg {
   grid-column: span 2;
   border: 1px solid var(--gold);
@@ -345,6 +353,8 @@ body {
   font-size: 1.1rem;
   line-height: 1.6;
   color: var(--gold);
+  max-height: 260px;         /* limite visual da mensagem */
+  overflow: auto;            /* se passar, aparece scroll interno */
 }
 
 /* Brasão da página final (se usar essa classe) */
@@ -429,5 +439,14 @@ body {
 
   .glam-layout {
     grid-template-columns: 1fr;
+  }
+
+  /* altura das fotos um pouco menor no celular */
+  .glam-photo {
+    height: 200px;
+  }
+
+  .glam-msg {
+    max-height: none;  /* no celular deixa a mensagem crescer à vontade */
   }
 }
