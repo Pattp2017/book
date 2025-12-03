@@ -33,7 +33,7 @@ body {
   align-items: center;
   justify-content: center;
   padding: 24px 0 80px;
-  perspective: 1800px;
+  perspective: 1800px;    /* profundidade do efeito de virar página */
 }
 
 /* Cada página física do livro */
@@ -41,8 +41,8 @@ body {
   position: absolute;
   top: 50%;
   left: 50%;
-  width: min(900px, 92vw);
-  min-height: min(620px, 88vh);
+  width: min(900px, 92vw);       /* largura padrão */
+  min-height: min(620px, 88vh);  /* altura base padrão */
   transform: translate(-50%, -50%);
   transform-origin: left center;
   transform-style: preserve-3d;
@@ -82,7 +82,7 @@ body {
   width: 100%;
   height: 100%;
   display: flex;
-  align-items: stretch;
+  align-items: center;
   justify-content: center;
 }
 
@@ -138,7 +138,7 @@ body {
 .page-glam {
   position: relative;
   width: 100%;
-  min-height: min(620px, 88vh);
+  min-height: min(620px, 88vh);  /* mesma altura base pra todas */
   margin: 0 auto;
   border-radius: 16px;
   box-shadow:
@@ -158,7 +158,7 @@ body {
   width: 100%;
   height: 100%;
   display: flex;
-  align-items: stretch;
+  align-items: center;
   justify-content: center;
   padding: 0;
 }
@@ -269,7 +269,7 @@ body {
 /* ===================== */
 
 .page-glam {
-  padding: 60px 40px;
+  padding: px 40px;
   color: var(--gold);
   background: linear-gradient(
     145deg,
@@ -285,7 +285,7 @@ body {
   position: absolute;
   inset: 16px;
   border-radius: 10px;
-  border 1px solid rgba(212, 175, 55, 0.6);
+  border: 1px solid rgba(212, 175, 55, 0.6);
 }
 
 .page-glam::after {
@@ -297,17 +297,15 @@ body {
   position: relative;
   width: 90%;
   max-width: 650px;
-  margin: 0 auto;
+  margin 0 auto;
   text-align: center;
   color: var(--gold);
-  display: flex;
-  flex-direction: column;
-  gap: 24px;
 }
 
 .page-glam-inner h2 {
   font-family: "Times New Roman", Georgia, serif;
   font-size: 2rem;
+  margin-bottom: 30px;
   color: var(--gold);
 }
 
@@ -316,10 +314,10 @@ body {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 22px;
-  margin-bottom: 10px;
+  margin-bottom: 30px;
 }
 
-/* BLOCO DA FOTO COM ALTURA FIXA */
+/* RETÂNGULO PADRÃO DA FOTO */
 .glam-photo {
   border-radius: 12px;
   border: 2px solid var(--gold);
@@ -328,15 +326,20 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  overflow: hidden;
-  height: 230px;   /* >>> todas as fotos terão esta altura */
+
+  /* TAMANHO FIXO DO RETÂNGULO – PADRÃO PARA TODAS AS PÁGINAS */
+  width: 100%;
+  height: 230px;        /* ajuste se quiser mais alto/baixo */
+  overflow: hidden;     /* nada “vaza” para fora da borda */
 }
 
-/* IMAGEM SE ADAPTA AO BLOCO */
+/* IMAGEM DENTRO DO RETÂNGULO, SEM CORTAR NADA */
 .glam-photo img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover; /* preenche o bloco; pode cortar um pouco a borda */
+  max-width: 100%;
+  max-height: 100%;
+  width: auto;
+  height: auto;
+  object-fit: contain;  /* mostra a foto inteira, sem cortar cabeça */
   display: block;
 }
 
@@ -344,7 +347,7 @@ body {
 .glam-msg {
   grid-column: span 2;
   border: 1px solid var(--gold);
-  border-radius: 12px;
+  border-radius: 12;
   background: rgba(0,0,0,0.45);
   padding: 22px;
   font-style: italic;
@@ -437,8 +440,8 @@ body {
     grid-template-columns: 1fr;
   }
 
-  /* fotos um pouco menores no celular */
+  /* retângulo um pouco menor no celular, se quiser */
   .glam-photo {
-    height: 200px;
+    height: 210px;
   }
 }
