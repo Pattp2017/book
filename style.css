@@ -33,16 +33,16 @@ body {
   align-items: center;
   justify-content: center;
   padding: 24px 0 80px;
-  perspective: 1800px;            /* profundidade pro efeito de virar */
+  perspective: 1800px;
 }
 
-/* Cada página */
+/* Cada página física do livro */
 .page {
   position: absolute;
   top: 50%;
   left: 50%;
-  width: min(900px, 92vw);         /* largura única pra todas */
-  min-height: min(620px, 88vh);    /* altura base única (evita rolagem) */
+  width: min(900px, 92vw);
+  min-height: min(620px, 88vh);
   transform: translate(-50%, -50%);
   transform-origin: left center;
   transform-style: preserve-3d;
@@ -82,7 +82,7 @@ body {
   width: 100%;
   height: 100%;
   display: flex;
-  align-items: stretch;      /* todas as páginas preenchem a altura */
+  align-items: stretch;
   justify-content: center;
 }
 
@@ -138,7 +138,7 @@ body {
 .page-glam {
   position: relative;
   width: 100%;
-  min-height: min(620px, 88vh);    /* mesma altura base pra todas */
+  min-height: min(620px, 88vh);
   margin: 0 auto;
   border-radius: 16px;
   box-shadow:
@@ -285,7 +285,7 @@ body {
   position: absolute;
   inset: 16px;
   border-radius: 10px;
-  border: 1px solid rgba(212, 175, 55, 0.6);
+  border 1px solid rgba(212, 175, 55, 0.6);
 }
 
 .page-glam::after {
@@ -305,11 +305,9 @@ body {
   gap: 24px;
 }
 
-/* Nome do aluno */
 .page-glam-inner h2 {
   font-family: "Times New Roman", Georgia, serif;
   font-size: 2rem;
-  margin-bottom: 10px;
   color: var(--gold);
 }
 
@@ -321,7 +319,7 @@ body {
   margin-bottom: 10px;
 }
 
-/* Bloco de foto com altura padrão */
+/* BLOCO DA FOTO COM ALTURA FIXA */
 .glam-photo {
   border-radius: 12px;
   border: 2px solid var(--gold);
@@ -330,19 +328,19 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  overflow: hidden;          /* esconde o excesso da imagem */
-  height: 230px;             /* ALTURA PADRÃO DAS FOTOS (ajuste se quiser) */
+  overflow: hidden;
+  height: 230px;   /* >>> todas as fotos terão esta altura */
 }
 
-/* Imagem se adapta ao espaço reservado */
+/* IMAGEM SE ADAPTA AO BLOCO */
 .glam-photo img {
   width: 100%;
   height: 100%;
-  object-fit: cover;         /* preenche o bloco mantendo proporção */
+  object-fit: cover; /* preenche o bloco; pode cortar um pouco a borda */
   display: block;
 }
 
-/* MENSAGEM – altura visual mais padronizada */
+/* MENSAGEM */
 .glam-msg {
   grid-column: span 2;
   border: 1px solid var(--gold);
@@ -353,8 +351,6 @@ body {
   font-size: 1.1rem;
   line-height: 1.6;
   color: var(--gold);
-  max-height: 260px;         /* limite visual da mensagem */
-  overflow: auto;            /* se passar, aparece scroll interno */
 }
 
 /* Brasão da página final (se usar essa classe) */
@@ -441,12 +437,8 @@ body {
     grid-template-columns: 1fr;
   }
 
-  /* altura das fotos um pouco menor no celular */
+  /* fotos um pouco menores no celular */
   .glam-photo {
     height: 200px;
-  }
-
-  .glam-msg {
-    max-height: none;  /* no celular deixa a mensagem crescer à vontade */
   }
 }
