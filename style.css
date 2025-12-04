@@ -303,8 +303,8 @@ body {
 
 /* imagem ocupando todo o conteúdo interno */
 .page-foto-cheia img {
-  width: 100%;
-  height: 100%;
+  width: 80%;
+  height: 80%;
   object-fit: cover; /* preenche tudo; corta um pouquinho nas bordas se precisar */
   border-radius: 12px;
 }
@@ -495,3 +495,4 @@ body {
     padding: 0; /* foto realmente ocupando tudo no mobile também */
   }
 }
+
