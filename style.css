@@ -271,7 +271,7 @@ body {
 
 .page-foto-cheia {
   position: relative;
-  width: 100%;
+  width: 60%;
   min-height: min(620px, 88vh);
   margin: 0 auto;
   border-radius: 16px;
@@ -495,5 +495,6 @@ body {
     padding: 0; /* foto realmente ocupando tudo no mobile também */
   }
 }
+
 
 
