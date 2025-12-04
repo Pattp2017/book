@@ -273,22 +273,16 @@ body {
 /* PÁGINA 2 – ARTE DA TURMA */
 /* ========================= */
 
-.page-foto-cheia {
+ .page-foto-cheia {
   position: relative;
-  /* tamanho do cartão dentro da página */
-  width: 80%;                /* ajuste aqui se quiser maior/menor */
-  max-width: 900px;
-  aspect-ratio: 16 / 9;      /* formato retangular da arte */
-
+  width: 60%;
+  min-height: min(620px, 88vh);
   margin: 0 auto;
   border-radius: 16px;
-
-  /* fundo preto e sombra forte em volta (igual ao print) */
-  background: #000;
+  background #000; /* fundo preto */
   box-shadow:
     0 0 0 1px rgba(0, 0, 0, 0.6),
-    0 40px 100px rgba(0, 0, 0, 1);
-
+    0 24px 60px rgba(0, 0, 0 0.85);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -301,32 +295,23 @@ body {
   content: "";
   position: absolute;
   inset: 16px;
-  border-radius: 12px;
-  border: 1px solid rgba(212, 175, 55, 0.8);
+  border-radius: 10px;
+  border: 1px solid rgba(212, 175, 55, 0.6);
   pointer-events: none;
 }
 
 .page-foto-cheia::after {
   inset: 32px;
-  border-color: rgba(212, 175, 55, 0.45);
+  border-color: rgba(212, 175, 55, 0.35);
 }
 
-/* IMAGEM DENTRO DA BORDA, SEM ULTRAPASSAR */
+/* imagem ocupando todo o conteúdo interno */
 .page-foto-cheia img {
-  position: relative;
-  z-index: 1;
-
-  /* caber dentro da área entre as bordas */
-  max-width: calc(100% - 96px);   /* 48px de cada lado */
-  max-height: calc(100% - 96px);  /* 48px em cima/baixo */
-  width: auto;
-  height: auto;
-
-  object-fit: contain;            /* mostra a arte inteira, sem cortar */
-  border-radius: 10px;
-}
-
-/* ===================== */
+  width: 60%;
+  height: 60%;
+  object-fit: cover; /* preenche tudo; corta um pouquinho nas bordas se precisar */
+  border-radius: 12px;
+}/* ===================== */
 /* PÁGINAS GLAM (ALUNOS) */
 /* ===================== */
 
@@ -512,6 +497,7 @@ body {
     padding: 0; /* foto realmente ocupando tudo no mobile também */
   }
 }
+
 
 
 
