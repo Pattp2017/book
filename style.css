@@ -1,5 +1,4 @@
-:root {
-  --bg: #050608;
+ --bg: #050608;
   --bg-gradient: radial-gradient(circle at top, #202028 0, #050608 55%);
   --gold: #d4af37;
   --gold-soft: #b8962f;
@@ -46,36 +45,37 @@ body {
   transform: translate(-50%, -50%);
   transform-origin: left center;
   transform-style: preserve-3d;
- : transform 0.9s ease;
+  transition: transform 0.9s ease;
   background: transparent;
   overflow: visible;
   backface-visibility: hidden;
 }
 
 /* ordem das páginas */
-#page1  { z-index: 24; } /* capa */
-#page2  { z-index: 23; } /* foto cheia (ou Ana Carolina, se não usar foto) */
-#page3  { z-index: 22; } /* Andressa */
-#page4  { z-index: 21; } /* Bianca */
-#page5  { z-index: 20; } /* Brenda */
-#page6  { z-index: 19; } Carolaine */
-#page7  { z-index: 18; } /* Claudinei */
-#page8  { z-index: 17; } /* Davi */
-#page9  { z-index: 16; } /* David */
+#page1 { z-index: 24; } /* capa */
+#page2 { z-index: 23; } /* Ana Carolina */
+#page3 { z-index: 22; } /* Andressa */
+#page4 { z-index: 21; } /* Bianca */
+#page5 { z-index: 20; } /* Brenda */
+#page6 { z-index: 19; } /* Carolaine */
+#page7 { z-index: 18; } /* Claudinei */
+#page8 { z-index: 17; } /* Davi */
+#page9 { z-index: 16; } /* David */
 #page10 { z-index: 15; } /* Emanuel */
 #page11 { z-index: 14; } /* Erica */
 #page12 { z-index: 13; } /* Lauan */
-#page13 { z-index: 12; } /* Letícia#page14 { z-index: 11; } /* Lucas */
+#page13 { z-index: 12; } /* Letícia */
+#page14 { z-index: 11; } /* Lucas */
 #page15 { z-index: 10; } /* Luis Miguel */
-#page16 { z-index: 9;  } /* Luis Otavio */
-#page17 { z-index: ;  } /* Marcos */
-#page18 { z-index: 7;  } /* Maria Eduarda */
-#page19 { z-index: 6;  } /* Maria Vitória */
-#page20 { z-index: 5;  } /* Natália */
-#page21 { z-index: 4;  } /* Pamela */
-#page22 { z-index: 3;  } /* Pedro */
-#page23 { z-index: 2;  } /* Vivian */
-#page24 { z-index: 1;  } /* Encerramento */
+#page16 { z-index: 9; } /* Luis Otavio */
+#page17 { z-index: 8; } /* Marcos */
+#page18 { z-index: 7; } /* Maria Eduarda */
+#page19 { z-index: 6; } /* Maria Vitória */
+#page20 { z-index: 5; } /* Natália */
+#page21 { z-index: 4; } /* Pamela */
+#page22 { z-index: 3; } /* Pedro */
+#page23 { z-index: 2; } /* Vivian */
+#page24 { z-index: 1; } /* Encerramento */
 
 .page-content {
   width: 100%;
@@ -87,7 +87,8 @@ body {
 
 /* efeito de virar página */
 .page.flipped {
-  transform: translate(-50%, -50%) rotateY(-180deg}
+  transform: translate(-50%, -50%) rotateY(-180deg);
+}
 
 /* NAV INFERIOR (setas) */
 .nav-bar {
@@ -133,8 +134,7 @@ body {
 /* ===================================== */
 
 .cover,
-.page-glam,
-.page-foto-cheia {
+.page-glam {
   position: relative;
   width: 100%;
   min-height: min(620px, 88vh); /* mesma altura base pra todas */
@@ -150,7 +150,7 @@ body {
 }
 
 /* ===================== */
-/* CAPA GLAMOUROSA      */
+/* CAPA GLAMOUROSA */
 /* ===================== */
 
 .cover-wrapper {
@@ -202,5 +202,92 @@ body {
 
 .title {
   font-size: 2.1rem;
-  letter-spacing: 0.1
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--gold);
+  line-height: 1.4;
+  margin-bottom: 14px;
+  font-family: "Times New Roman", Georgia, serif;
+}
 
+.subtitle {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.26em;
+  color: var(--gold-soft);
+  margin-bottom: 40px;
+  font-family: "Times New Roman", Georgia, serif;
+}
+
+.divider {
+  width: 100%;
+  max-width: 220px;
+  height: 1px;
+  margin: 0 auto 26px;
+  background: linear-gradient(
+    to right,
+    transparent,
+    rgba(212, 175, 55, 0.9),
+    transparent
+  );
+  position: relative;
+}
+
+.divider::after {
+  content: "";
+  position: absolute;
+  top: -4px;
+  left: 50%;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  border: 1px solid var(--gold);
+  transform: translateX(-50%);
+  background: #050608;
+}
+
+.quote {
+  font-size: 1.4rem;
+  font-style: italic;
+  color: #f0e0b0;
+  line-height: 1.6;
+  margin-bottom: 40px;
+  padding: 0 10px;
+}
+
+.school {
+  font-size: 1.2rem;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  color: var(--gold-soft);
+  line-height: 1.6;
+}
+
+/* ===================== */
+/* PÁGINAS GLAM (ALUNOS) */
+/* ===================== */
+
+.page-glam {
+  padding: px 40px;
+  color: var(--gold);
+  background: linear-gradient(
+    145deg,
+    var(--tema-fundo, #050608) 0%,
+    var(--tema-fundo, #050608) 55%,
+    #111217 100%
+  );
+}
+
+.page-glam::before,
+.page-glam::after {
+  content: "";
+  position: absolute;
+  inset: 16px;
+  border-radius: 10px;
+  border: 1px solid rgba(212, 175, 55, 0.6);
+}
+
+.page-glam::after {
+  inset: 32px;
+  border-color: rgba(212, 175, 55, 0.35);
+}
