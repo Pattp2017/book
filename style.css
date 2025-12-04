@@ -407,29 +407,61 @@ body {
 /* RESPONSIVO – CELULAR */
 /* ===================== */
 @media (max-width: 768px) {
+
+  /* a página deixa de ocupar 900px “duros” */
   .page {
     width: 100%;
     min-height: auto;
+    left: 50%;
+    transform: translate(-50%, -50%); /* mantém centralizado */
   }
+
+  /* cartões (capa e páginas glam) com respiro nas laterais */
   .cover,
   .page-glam {
-    width: 94vw;
+    width: 94vw;                 /* quase toda a largura do celular */
     min-height: auto;
-    padding: 24px 16px 40px;
+    padding: 24px 16px 40px;     /* um pouco menos de padding */
   }
+
   .page-glam-inner,
   .cover-inner {
     width: 100%;
     max-width: 100%;
   }
+
+  /* GRID vira 1 coluna: fotos uma embaixo da outra */
   .glam-layout {
     grid-template-columns: 1fr;
   }
-  /* retângulo um pouco menor no celular, se quiser */
+
+  /* deixa a altura da caixa da foto seguir a própria foto */
   .glam-photo {
-    height: 210px;
+    height: auto;
+  }
+
+  /* garante que a foto não “estoure” no mobile */
+  .glam-photo img {
+    max-width: 100%;
+    height: auto;
+    object-fit: contain;
+  }
+
+  /* se você tiver a página 2 com .page-foto-cheia, ajusta também */
+  .page-foto-cheia {
+    width: 94vw;
+    max-width: 94vw;
+    height: auto;
+  }
+
+  .page-foto-cheia img {
+    max-width: 100%;
+    height: auto;
+    object-fit: contain;
   }
 }
+
+
 
 
 
