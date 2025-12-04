@@ -1,4 +1,5 @@
- --bg: #050608;
+:root {
+  --bg: #050608;
   --bg-gradient: radial-gradient(circle at top, #202028 0, #050608 55%);
   --gold: #d4af37;
   --gold-soft: #b8962f;
@@ -32,7 +33,7 @@ body {
   align-items: center;
   justify-content: center;
   padding: 24px 0 80px;
-  perspective: 1800px; /* profundidade do efeito de virar página */
+  perspective: 1800px;    /* profundidade do efeito de virar página */
 }
 
 /* Cada página física do livro */
@@ -40,8 +41,8 @@ body {
   position: absolute;
   top: 50%;
   left: 50%;
-  width: min(900px, 92vw); /* largura padrão */
-  min-height: min(620px, 88vh); /* altura base padrão */
+  width: min(900px, 92vw);       /* largura padrão */
+  min-height: min(620px, 88vh);  /* altura base padrão */
   transform: translate(-50%, -50%);
   transform-origin: left center;
   transform-style: preserve-3d;
@@ -52,30 +53,31 @@ body {
 }
 
 /* ordem das páginas */
-#page1 { z-index: 24; } /* capa */
-#page2 { z-index: 23; } /* Ana Carolina */
-#page3 { z-index: 22; } /* Andressa */
-#page4 { z-index: 21; } /* Bianca */
-#page5 { z-index: 20; } /* Brenda */
-#page6 { z-index: 19; } /* Carolaine */
-#page7 { z-index: 18; } /* Claudinei */
-#page8 { z-index: 17; } /* Davi */
-#page9 { z-index: 16; } /* David */
-#page10 { z-index: 15; } /* Emanuel */
-#page11 { z-index: 14; } /* Erica */
-#page12 { z-index: 13; } /* Lauan */
-#page13 { z-index: 12; } /* Letícia */
-#page14 { z-index: 11; } /* Lucas */
-#page15 { z-index: 10; } /* Luis Miguel */
-#page16 { z-index: 9; } /* Luis Otavio */
-#page17 { z-index: 8; } /* Marcos */
-#page18 { z-index: 7; } /* Maria Eduarda */
-#page19 { z-index: 6; } /* Maria Vitória */
-#page20 { z-index: 5; } /* Natália */
-#page21 { z-index: 4; } /* Pamela */
-#page22 { z-index: 3; } /* Pedro */
-#page23 { z-index: 2; } /* Vivian */
-#page24 { z-index: 1; } /* Encerramento */
+#page1  { z-index: 25; }  /* capa */
+#page2  { z-index: 24; }  /* foto cheia */
+#page3  { z-index: 23; }  /* Ana Carolina */
+#page4  { z-index: 22; }  /* Andressa */
+#page5  { z-index: 21; }  /* Bianca */
+#page6  { z-index: 20; }  /* Brenda */
+#page7  { z-index: 19; }  /* Carolaine */
+#page8  { z-index: 18; }  /* Claudinei */
+#page9  { z-index: 17; }  /* Davi */
+#page10 { z-index: 16; }  /* David */
+#page11 { z-index: 15; }  /* Emanuel */
+#page12 { z-index: 14; }  /* Erica */
+#page13 { z-index: 13; }  /* Lauan */
+#page14 { z-index: 12; }  /* Letícia */
+#page15 { z-index: 11; }  /* Lucas */
+#page16 { z-index: 10; }  /* Luis Miguel */
+#page17 { z-index: 9;  }  /* Luis Otavio */
+#page18 { z-index: 8;  }  /* Marcos */
+#page19 { z-index: 7;  }  /* Maria Eduarda */
+#page20 { z-index: 6;  }  /* Maria Vitória */
+#page21 { z-index: 5;  }  /* Natália */
+#page22 { z-index: 4;  }  /* Pamela */
+#page23 { z-index: 3;  }  /* Pedro */
+#page24 { z-index: 2;  }  /* Vivian */
+#page25 { z-index: 1;  }  /* Encerramento */
 
 .page-content {
   width: 100%;
@@ -137,7 +139,7 @@ body {
 .page-glam {
   position: relative;
   width: 100%;
-  min-height: min(620px, 88vh); /* mesma altura base pra todas */
+  min-height: min(620px, 88vh);  /* mesma altura base pra todas */
   margin: 0 auto;
   border-radius: 16px;
   box-shadow:
@@ -150,7 +152,7 @@ body {
 }
 
 /* ===================== */
-/* CAPA GLAMOUROSA */
+/* CAPA GLAMOUROSA      */
 /* ===================== */
 
 .cover-wrapper {
@@ -263,12 +265,56 @@ body {
   line-height: 1.6;
 }
 
+/* ========================= */
+/* PÁGINA 2 – FOTO CHEIA    */
+/* ========================= */
+
+.page-foto-cheia {
+  position: relative;
+  width: 100%;
+  min-height: min(620px, 88vh);
+  margin: 0 auto;
+  border-radius: 16px;
+  background #000; /* fundo preto */
+  box-shadow:
+    0 0 0 1px rgba(0, 0, 0, 0.6),
+    0 24px 60px rgba(0, 0, 0 0.85);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+/* bordas internas douradas, igual às outras páginas */
+.page-foto-cheia::before,
+.page-foto-cheia::after {
+  content: "";
+  position: absolute;
+  inset: 16px;
+  border-radius: 10px;
+  border: 1px solid rgba(212, 175, 55, 0.6);
+  pointer-events: none;
+}
+
+.page-foto-cheia::after {
+  inset: 32px;
+  border-color: rgba(212, 175, 55, 0.35);
+}
+
+/* imagem ocupando todo o conteúdo interno */
+.page-foto-cheia img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* preenche tudo; corta um pouquinho nas bordas se precisar */
+  border-radius: 12px;
+}
+
 /* ===================== */
 /* PÁGINAS GLAM (ALUNOS) */
 /* ===================== */
 
 .page-glam {
-  padding: px 40px;
+  padding: 60px 40px;
   color: var(--gold);
   background: linear-gradient(
     145deg,
@@ -290,4 +336,162 @@ body {
 .page-glam::after {
   inset: 32px;
   border-color: rgba(212, 175, 55, 0.35);
+}
+
+.page-glam-inner {
+  position: relative;
+  width: 90%;
+  max-width: 650px;
+  margin: 0 auto;
+  text-align: center;
+  color: var(--gold);
+}
+
+.page-glam-inner h2 {
+  font-family: "Times New Roman", Georgia, serif;
+  font-size: 2rem;
+  margin-bottom: 30px;
+  color: var(--gold);
+}
+
+/* GRID DAS FOTOS */
+.glam-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 22px;
+  margin-bottom: 30px;
+}
+
+/* RETÂNGULO PADRÃO DA FOTO */
+.glam-photo {
+  border-radius: 12px;
+  border: 2px solid var(--gold);
+  background: rgba(0,0,0,0.45);
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  /* TAMANHO FIXO DO RETÂNGULO – PADRÃO PARA TODAS AS PÁGINAS */
+  width: 100%;
+  height: 230px;        /* ajuste se quiser mais alto/baixo */
+  overflow: hidden;     /* nada “vaza” para fora da borda */
+}
+
+/* IMAGEM DENTRO DO RETÂNGULO, SEM CORTAR NADA */
+.glam-photo img {
+  max-width: 100%;
+  max-height: 100%;
+  width: auto;
+  height: auto;
+  object-fit: contain;  /* mostra a foto inteira, sem cortar cabeça */
+  display: block;
+}
+
+/* MENSAGEM */
+.glam-msg {
+  grid-column: span 2;
+  border: 1px solid var(--gold);
+  border-radius: 12px;
+  background: rgba(0,0,0,0.45);
+  padding: 22px;
+  font-style: italic;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: var(--gold);
+}
+
+/* Brasão da página final (se usar essa classe) */
+.brasao-final {
+  grid-column: span 2;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 24px;
+}
+
+.brasao-final img {
+  max-width: 260px;
+  height: auto;
+}
+
+/* ===== Página final NOVA VIA ===== */
+
+.novavia-inner {
+  max-width: 720px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.novavia-logo {
+  margin: 20px auto 24px;
+  display: flex;
+  justify-content: center;
+}
+
+.novavia-logo img {
+  max-width: 150px;
+  height: auto;
+}
+
+.novavia-box {
+  border: 1px solid var(--gold);
+  border-radius: 12px;
+  background: rgba(0,0,0,0.45);
+  padding: 22px;
+  font-style: italic;
+  font-size: 1.05rem;
+  line-height: 1.6;
+  color: var(--gold);
+}
+
+/* TEMAS DE COR POR ALUNO */
+
+.tema-preto        { --tema-fundo:#050608; }
+.tema-vermelho     { --tema-fundo:#8b1116; }
+.tema-lilas        { --tema-fundo:#7b4dbb; }
+.tema-verde        { --tema-fundo:#1b6f3b; }
+.tema-azul         { --tema-fundo:#1c4f9c; }
+.tema-azul-marinho { --tema-fundo:#0b224c; }
+.tema-branco       { --tema-fundo:#d9d9d9; }
+.tema-roxo         { --tema-fundo:#4b1366; }
+.tema-vinho        { --tema-fundo:#5b0a2e; }
+.tema-rosa         { --tema-fundo:#b83272; }
+
+/* ===================== */
+/* RESPONSIVO – CELULAR */
+/* ===================== */
+
+@media (max-width: 768px) {
+
+  .page {
+    width: 100%;
+    min-height: auto;
+  }
+
+  .cover,
+  .page-glam,
+  .page-foto-cheia {
+    width: 94vw;
+    min-height: auto;
+    padding: 24px 16px 40px;
+  }
+
+  .page-glam-inner,
+  .cover-inner {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .glam-layout {
+    grid-template-columns: 1fr;
+  }
+
+  /* retângulo um pouco menor no celular */
+  .glam-photo {
+    height: 210px;
+  }
+
+  .page-foto-cheia {
+    padding: 0; /* foto realmente ocupando tudo no mobile também */
+  }
 }
