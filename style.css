@@ -53,30 +53,31 @@ body {
 }
 
 /* ordem das páginas */
-#page1  { z-index: 24; }  /* capa */
-#page2  { z-index: 23; }  /* Ana Carolina */
-#page3  { z-index: 22; }  /* Andressa */
-#page4  { z-index: 21; }  /* Bianca */
-#page5  { z-index: 20; }  /* Brenda */
-#page6  { z-index: 19; }  /* Carolaine */
-#page7  { z-index: 18; }  /* Claudinei */
-#page8  { z-index: 17; }  /* Davi */
-#page9  { z-index: 16; }  /* David */
-#page10 { z-index: 15; }  /* Emanuel */
-#page11 { z-index: 14; }  /* Erica */
-#page12 { z-index: 13; }  /* Lauan */
-#page13 { z-index: 12; }  /* Letícia */
-#page14 { z-index: 11; }  /* Lucas */
-#page15 { z-index: 10; }  /* Luis Miguel */
-#page16 { z-index: 9;  }  /* Luis Otavio */
-#page17 { z-index: 8;  }  /* Marcos */
-#page18 { z-index: 7;  }  /* Maria Eduarda */
-#page19 { z-index: 6;  }  /* Maria Vitória */
-#page20 { z-index: 5;  }  /* Natália */
-#page21 { z-index: 4;  }  /* Pamela */
-#page22 { z-index: 3;  }  /* Pedro */
-#page23 { z-index: 2;  }  /* Vivian */
-#page24 { z-index: 1;  }  /* Encerramento */
+#page1  { z-index: 25; }  /* capa */
+#page2  { z-index: 24; }  /* foto cheia */
+#page3  { z-index: 23; }  /* Ana Carolina */
+#page4  { z-index: 22; }  /* Andressa */
+#page5  { z-index: 21; }  /* Bianca */
+#page6  { z-index: 20; }  /* Brenda */
+#page7  { z-index: 19; }  /* Carolaine */
+#page8  { z-index: 18; }  /* Claudinei */
+#page9  { z-index: 17; }  /* Davi */
+#page10 { z-index: 16; }  /* David */
+#page11 { z-index: 15; }  /* Emanuel */
+#page12 { z-index: 14; }  /* Erica */
+#page13 { z-index: 13; }  /* Lauan */
+#page14 { z-index: 12; }  /* Letícia */
+#page15 { z-index: 11; }  /* Lucas */
+#page16 { z-index: 10; }  /* Luis Miguel */
+#page17 { z-index: 9;  }  /* Luis Otavio */
+#page18 { z-index: 8;  }  /* Marcos */
+#page19 { z-index: 7;  }  /* Maria Eduarda */
+#page20 { z-index: 6;  }  /* Maria Vitória */
+#page21 { z-index: 5;  }  /* Natália */
+#page22 { z-index: 4;  }  /* Pamela */
+#page23 { z-index: 3;  }  /* Pedro */
+#page24 { z-index: 2;  }  /* Vivian */
+#page25 { z-index: 1;  }  /* Encerramento */
 
 .page-content {
   width: 100%;
@@ -264,12 +265,56 @@ body {
   line-height: 1.6;
 }
 
+/* ========================= */
+/* PÁGINA 2 – FOTO CHEIA    */
+/* ========================= */
+
+.page-foto-cheia {
+  position: relative;
+  width: 100%;
+  min-height: min(620px, 88vh);
+  margin: 0 auto;
+  border-radius: 16px;
+  background #000; /* fundo preto */
+  box-shadow:
+    0 0 0 1px rgba(0, 0, 0, 0.6),
+    0 24px 60px rgba(0, 0, 0 0.85);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+/* bordas internas douradas, igual às outras páginas */
+.page-foto-cheia::before,
+.page-foto-cheia::after {
+  content: "";
+  position: absolute;
+  inset: 16px;
+  border-radius: 10px;
+  border: 1px solid rgba(212, 175, 55, 0.6);
+  pointer-events: none;
+}
+
+.page-foto-cheia::after {
+  inset: 32px;
+  border-color: rgba(212, 175, 55, 0.35);
+}
+
+/* imagem ocupando todo o conteúdo interno */
+.page-foto-cheia img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* preenche tudo; corta um pouquinho nas bordas se precisar */
+  border-radius: 12px;
+}
+
 /* ===================== */
 /* PÁGINAS GLAM (ALUNOS) */
 /* ===================== */
 
 .page-glam {
-  padding: px 40px;
+  padding: 60px 40px;
   color: var(--gold);
   background: linear-gradient(
     145deg,
@@ -297,7 +342,7 @@ body {
   position: relative;
   width: 90%;
   max-width: 650px;
-  margin 0 auto;
+  margin: 0 auto;
   text-align: center;
   color: var(--gold);
 }
@@ -347,7 +392,7 @@ body {
 .glam-msg {
   grid-column: span 2;
   border: 1px solid var(--gold);
-  border-radius: 12;
+  border-radius: 12px;
   background: rgba(0,0,0,0.45);
   padding: 22px;
   font-style: italic;
@@ -424,7 +469,8 @@ body {
   }
 
   .cover,
-  .page-glam {
+  .page-glam,
+  .page-foto-cheia {
     width: 94vw;
     min-height: auto;
     padding: 24px 16px 40px;
@@ -440,8 +486,12 @@ body {
     grid-template-columns: 1fr;
   }
 
-  /* retângulo um pouco menor no celular, se quiser */
+  /* retângulo um pouco menor no celular */
   .glam-photo {
     height: 210px;
+  }
+
+  .page-foto-cheia {
+    padding: 0; /* foto realmente ocupando tudo no mobile também */
   }
 }
