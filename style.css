@@ -1,12 +1,12 @@
 :root {
   --bg: #050608;
-  --bg: radial-gradient(circle at top, #202028 0, #050608 55%);
+  --bg-gradient: radial-gradient(circle at top, #202028 0, #050608 55%);
   --gold: #d4af37;
   --gold-soft: #b8962f;
   --text: #f8f6f0;
 }
 
-/* BÁSICO */
+/* RESET BÁSICO */
 * {
   box-sizing: border-box;
   margin: 0;
@@ -33,50 +33,49 @@ body {
   align-items: center;
   justify-content: center;
   padding: 24px 0 80px;
-  perspective: 1800px;            /* profundidade pro efeito de virar */
+  perspective: 1800px; /* profundidade do efeito de virar página */
 }
 
-/* Cada página */
+/* Cada página física do livro */
 .page {
   position: absolute;
   top: 50%;
   left: 50%;
-  width: min(900px, 92vw);         /* largura única pra todas */
-  min-height: min(620px, 88vh);    /* altura base única (evita rolagem) */
+  width: min(900px, 92vw); /* largura padrão */
+  min-height: min(620px, 88vh); /* altura base padrão */
   transform: translate(-50%, -50%);
   transform-origin: left center;
   transform-style: preserve-3d;
-  transition: transform 0.9s ease;
+ : transform 0.9s ease;
   background: transparent;
   overflow: visible;
   backface-visibility: hidden;
 }
 
-/* ordem das páginas (se manter 24 páginas, ajuste conforme precisar) */
-#page1  { z-index: 24; }  /* capa */
-#page2  { z-index: 23; }  /* foto cheia ou Ana Carolina, conforme seu HTML */
-#page3  { z-index: 22; }  /* Andressa */
-#page4  { z-index: 21; }  /* Bianca */
-#page5  { z-index: 20; }  /* Brenda */
-#page6  { z-index: 19; }  /* Carolaine */
-#page7  { z-index: 18; }  /* Claudinei */
-#page8  { z-index: 17; }  /* Davi */
-#page9  { z-index: 16; }  /* David */
-#page10 { z-index: ; }  /* Emanuel */
-#page11 { z-index: 14; }  /* Erica */
-#page12 { z-index: 13; }  /* Lauan */
-#page13 { z-index: 12; }  /* Letícia */
-#page14 { z-index: 11; }  /* Lucas */
-#page15 { z-index: 10; }  /* Luis Miguel */
-#page16 { z-index: 9;  }  /* Luis Otavio */
-#page17 { z-index: 8;  }  /* Marcos */
-#page18 { z-index: 7;  }  /* Maria Eduarda */
-#page19 { z-index: 6;  }  /* Maria Vitória */
-#page20 { z-index: 5;  }  /* Natália */
-#page21 { z-index: 4;  }  /* Pamela */
-#page22 { z-index: 3;  }  /* Pedro */
-#page23 { z-index: 2;  }  /* Vivian */
-#page24 { z-index: 1;  }  /* Encerramento */
+/* ordem das páginas */
+#page1  { z-index: 24; } /* capa */
+#page2  { z-index: 23; } /* foto cheia (ou Ana Carolina, se não usar foto) */
+#page3  { z-index: 22; } /* Andressa */
+#page4  { z-index: 21; } /* Bianca */
+#page5  { z-index: 20; } /* Brenda */
+#page6  { z-index: 19; } Carolaine */
+#page7  { z-index: 18; } /* Claudinei */
+#page8  { z-index: 17; } /* Davi */
+#page9  { z-index: 16; } /* David */
+#page10 { z-index: 15; } /* Emanuel */
+#page11 { z-index: 14; } /* Erica */
+#page12 { z-index: 13; } /* Lauan */
+#page13 { z-index: 12; } /* Letícia#page14 { z-index: 11; } /* Lucas */
+#page15 { z-index: 10; } /* Luis Miguel */
+#page16 { z-index: 9;  } /* Luis Otavio */
+#page17 { z-index: ;  } /* Marcos */
+#page18 { z-index: 7;  } /* Maria Eduarda */
+#page19 { z-index: 6;  } /* Maria Vitória */
+#page20 { z-index: 5;  } /* Natália */
+#page21 { z-index: 4;  } /* Pamela */
+#page22 { z-index: 3;  } /* Pedro */
+#page23 { z-index: 2;  } /* Vivian */
+#page24 { z-index: 1;  } /* Encerramento */
 
 .page-content {
   width: 100%;
@@ -88,8 +87,7 @@ body {
 
 /* efeito de virar página */
 .page.flipped {
-  transform: translate(-50%, -50%) rotateY(-180deg);
-}
+  transform: translate(-50%, -50%) rotateY(-180deg}
 
 /* NAV INFERIOR (setas) */
 .nav-bar {
@@ -135,10 +133,11 @@ body {
 /* ===================================== */
 
 .cover,
-.page-glam {
+.page-glam,
+.page-foto-cheia {
   position: relative;
   width: 100%;
-  min-height: min(620px, 88vh);    /* mesma altura base pra todas */
+  min-height: min(620px, 88vh); /* mesma altura base pra todas */
   margin: 0 auto;
   border-radius: 16px;
   box-shadow:
@@ -195,7 +194,7 @@ body {
 
 .eyebrow {
   font-size: 0.9rem;
-  letter-spacing: 035em;
+  letter-spacing: 0.35em;
   text-transform: uppercase;
   color: var(--gold-soft);
   margin-bottom: 18px;
@@ -203,294 +202,5 @@ body {
 
 .title {
   font-size: 2.1rem;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  color: var(--gold);
-  line-height: 1.4;
-  margin-bottom: 14px;
-  font-family: "Times New Roman", Georgia, serif;
-}
+  letter-spacing: 0.1
 
-.subtitle {
-  font-size: 0.8rem;
-  text-transform:;
-  letter-spacing: 0.26em;
-  color: var(--gold-soft);
-  margin-bottom:40px;
-  font-family: "Times New Roman", Georgia, serif;
-}
-
-.divider {
-  width: 100%;
-  max-width: 220px;
-  height: 1px;
-  margin: 0 auto 26px;
-  background: linear-gradient(
-    to right,
-    transparent,
-    rgba(212, 175, 55, 0.9),
-    transparent
-  );
-  position: relative;
-}
-
-.divider::after {
-  content: "";
-  position: absolute;
-  top: -4px;
-  left: 50%;
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
-  border: 1px solid var(--gold);
-  transform: translateX(-50%);
-  background: #050608;
-}
-
-.quote {
-  font-size: 1.4rem;
-  font-style: italic;
-  color: #f0e0b0;
-  line-height: 1.6;
-  margin-bottom: 40px;
-  padding: 0 10px;
-}
-
-.school {
-  font-size: 1.2rem;
-  text-transform: uppercase;
-  letter-spacing: 0.18em;
-  color: var(--gold-soft);
-  line-height: 1.6;
-}
-
-/* ========================= */
-/* PÁGINA 2 – FOTO CHEIA    */
-/* ========================= */
-
-.page-foto-cheia {
-  position: relative;
-  width: 100%;
-  min-height: min(620px, 88vh);
-  margin: 0 auto;
-  border-radius: 16px;
-  background: #000; /* fundo preto */
-  box-shadow:
-    0 0 0 1px rgba(0, 0, 0, 0.6),
-    0 24px 60px rgba(0, 0, 0, 0.85);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  overflow: hidden;
-}
-
-/* bordas internas douradas, igual às outras páginas */
-.page-foto-cheia::before,
-.page-foto-cheia::after {
-  content: "";
-  position: absolute;
-  inset: 16px;
-  border-radius: 10px;
-  border: 1px solid rgba(212, 175, 55, 0.6);
-  pointer-events: none;
-}
-
-.page-foto-cheia::after {
-  inset: 32px;
-  border-color: rgba(212, 175, 55, 0.35);
-}
-
-/* FOTO DENTRO DA ÁREA ENTRE AS BORDAS, SEM PASSAR DO LIMITE */
-.page-foto-cheia img {
-  position: relative;
-  z-index: 1;
-  width: calc(100% - 64px);   /* 32px de cada lado */
-  height: calc(100% - 64px);  /* 32px em cima/baixo */
-  object-fit: contain;        /* mostra inteira, não corta nada */
-  border-radius: 12px;
-}
-
-/* ===================== */
-/* PÁGINAS GLAM (ALUNOS) */
-/* ===================== */
-
-.page-glam {
-  padding: 60px 40px;
-  color: var(--gold);
-  background: linear-gradient(
-    145deg,
-    var(--tema-fundo, #050608) 0%,
-    var(--tema-fundo, #050608) 55%,
-    #111217 100%
-  );
-}
-
-.page-glam::before,
-.page-glam::after {
-  content: "";
-  position: absolute;
-  inset: 16px;
-  border-radius: 10px;
-  border: 1px solid rgba(212, 175, 55, 0.6);
-}
-
-.page-glam::after {
-  inset: 32px;
-  border-color: rgba(212, 175, 55, 0.35);
-}
-
-.page-glam-inner {
-  position: relative;
-  width: 90%;
-  max-width: 650px;
-  margin: 0 auto;
-  text-align: center;
-  color: var(--gold);
-}
-
-.page-glam-inner h2 {
-  font-family: "Times New Roman", Georgia, serif;
-  font-size: 2rem;
-  margin-bottom: 30px;
-  color: var(--gold);
-}
-
-/* GRID DAS FOTOS */
-.glam-layout {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 22px;
-  margin-bottom: 30px;
-}
-
-/* RETÂNGULO PADRÃO DA FOTO */
-.glam-photo {
-  border-radius: 12px;
-  border: 2px solid var(--gold);
-  background: rgba(0,0,0,0.45);
-  padding: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-  /* tamanho fixo do retângulo – padrão */
-  width: 100%;
-  height: 230px;        /* ajuste se quiser mais alto/baixo */
-  overflow: hidden;
-}
-
-/* IMAGEM DENTRO DO RETÂNGULO, SEM CORTAR NADA */
-.glam-photo img {
-  max-width: 100%;
-  max-height: 100%;
-  width: auto;
-  height: auto;
-  object-fit: contain;  /* mostra a foto inteira, sem cortar cabeça */
-  display: block;
-}
-
-/* MENSAGEM */
-.glam-msg {
-  grid-column: span 2;
-  border: 1px solid var(--gold);
-  border-radius: 12px;
-  background: rgba(0,0,0,0.45);
-  padding: 22px;
-  font-style: italic;
-  font-size: 1.1rem;
-  line-height: 1.6;
-  color: var(--gold);
-}
-
-/* Brasão da página final (se usar essa classe) */
-.brasao-final {
-  grid-column: span 2;
-  display: flex  justify-content: center;
-  margin-bottom: 24px;
-}
-
-.brasao-final img {
-  max-width: 260px;
-  height: auto;
-}
-
-/* ===== Página final NOVA VIA ===== */
-
-.novavia-inner {
-  max-width: 720px;
-  margin: 0 auto;
-  text-align: center;
-}
-
-.novavia-logo {
-  margin: 20px auto 24px;
-  display: flex;
-  justify-content: center;
-}
-
-.novavia-logo img {
-  max-width: 150px;
-  height: auto;
-}
-
-.novavia-box {
-  border: 1px solid var(--gold);
-  border-radius: 12px;
-  background: rgba(0,0,0,0.45);
-  padding: 22px;
-  font-style: italic;
-  font-size: 1.05rem;
-  line-height: 1.6;
-  color: var(--gold);
-}
-
-/* TEMAS DE COR POR ALUNO */
-
-.tema-preto        { --tema-fundo:#050608; }
-.tema-vermelho     { --tema-fundo:#8b1116; }
-.tema-lilas        { --tema-fundo:#7b4dbb; }
-.tema-verde        { --tema-fundo:#1b6f3b; }
-.tema-azul         { --tema-fundo:#1c4f9c; }
-.tema-azul-marinho { --tema-fundo:#0b224c; }
-.tema-branco       { --tema-fundo:#d9d9d9; }
-.tema-roxo         { --tema-fundo:#4b1366; }
-.tema-vinho        { --tema-fundo:#5b0a2e; }
-.tema-rosa         { --tema-fundo:#b83272; }
-
-/* ===================== */
-/* RESPONSIVO – CELULAR */
-/* ===================== */
-
-@media (max-width: 768px) {
-
-  .page {
-    width: 100%;
-    min-height: auto;
-  }
-
-  .cover,
-  .page-glam,
-  .page-foto-cheia {
-    width: 94vw;
-    min-height: auto;
-    padding: 24px 16px 40px;
-  }
-
-  .page-glam-inner,
- cover-inner {
-    width: 100%;
-    max-width: 100%;
-  }
-
-  .glam-layout    grid-template-columns: 1fr;
-  }
-
-  .glam-photo {
-    height: 210px;
-  }
-
-  .page-foto-cheia img {
-    width: calc(100% - 48px);
-    height: calc(100% - 48px);
-  }
-}
