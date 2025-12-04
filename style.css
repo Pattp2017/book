@@ -143,7 +143,7 @@ body {
 .page-foto-cheia {
   /* usa a mesma base de tamanho do cartão */
   position: relative;
-  width: 60%;
+  width: 100%;
   min-height: min(620px, 88vh);
   margin: 0 auto;
 
@@ -430,5 +430,6 @@ body {
     height: 210px;
   }
 }
+
 
 
