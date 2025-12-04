@@ -1,12 +1,12 @@
 :root {
   --bg: #050608;
-  --bg-gradient: radial-gradient(circle at top, #202028 0, #050608 55%);
+  --bg: radial-gradient(circle at top, #202028 0, #050608 55%);
   --gold: #d4af37;
   --gold-soft: #b8962f;
   --text: #f8f6f0;
 }
 
-/* RESET BÁSICO */
+/* BÁSICO */
 * {
   box-sizing: border-box;
   margin: 0;
@@ -33,16 +33,16 @@ body {
   align-items: center;
   justify-content: center;
   padding: 24px 0 80px;
-  perspective: 1800px;    /* profundidade do efeito de virar página */
+  perspective: 1800px;            /* profundidade pro efeito de virar */
 }
 
-/* Cada página física do livro */
+/* Cada página */
 .page {
   position: absolute;
   top: 50%;
   left: 50%;
-  width: min(900px, 92vw);       /* largura padrão */
-  min-height: min(620px, 88vh);  /* altura base padrão */
+  width: min(900px, 92vw);         /* largura única pra todas */
+  min-height: min(620px, 88vh);    /* altura base única (evita rolagem) */
   transform: translate(-50%, -50%);
   transform-origin: left center;
   transform-style: preserve-3d;
@@ -52,32 +52,31 @@ body {
   backface-visibility: hidden;
 }
 
-/* ordem das páginas */
-#page1  { z-index: 25; }  /* capa */
-#page2  { z-index: 24; }  /* foto cheia */
-#page3  { z-index: 23; }  /* Ana Carolina */
-#page4  { z-index: 22; }  /* Andressa */
-#page5  { z-index: 21; }  /* Bianca */
-#page6  { z-index: 20; }  /* Brenda */
-#page7  { z-index: 19; }  /* Carolaine */
-#page8  { z-index: 18; }  /* Claudinei */
-#page9  { z-index: 17; }  /* Davi */
-#page10 { z-index: 16; }  /* David */
-#page11 { z-index: 15; }  /* Emanuel */
-#page12 { z-index: 14; }  /* Erica */
-#page13 { z-index: 13; }  /* Lauan */
-#page14 { z-index: 12; }  /* Letícia */
-#page15 { z-index: 11; }  /* Lucas */
-#page16 { z-index: 10; }  /* Luis Miguel */
-#page17 { z-index: 9;  }  /* Luis Otavio */
-#page18 { z-index: 8;  }  /* Marcos */
-#page19 { z-index: 7;  }  /* Maria Eduarda */
-#page20 { z-index: 6;  }  /* Maria Vitória */
-#page21 { z-index: 5;  }  /* Natália */
-#page22 { z-index: 4;  }  /* Pamela */
-#page23 { z-index: 3;  }  /* Pedro */
-#page24 { z-index: 2;  }  /* Vivian */
-#page25 { z-index: 1;  }  /* Encerramento */
+/* ordem das páginas (se manter 24 páginas, ajuste conforme precisar) */
+#page1  { z-index: 24; }  /* capa */
+#page2  { z-index: 23; }  /* foto cheia ou Ana Carolina, conforme seu HTML */
+#page3  { z-index: 22; }  /* Andressa */
+#page4  { z-index: 21; }  /* Bianca */
+#page5  { z-index: 20; }  /* Brenda */
+#page6  { z-index: 19; }  /* Carolaine */
+#page7  { z-index: 18; }  /* Claudinei */
+#page8  { z-index: 17; }  /* Davi */
+#page9  { z-index: 16; }  /* David */
+#page10 { z-index: ; }  /* Emanuel */
+#page11 { z-index: 14; }  /* Erica */
+#page12 { z-index: 13; }  /* Lauan */
+#page13 { z-index: 12; }  /* Letícia */
+#page14 { z-index: 11; }  /* Lucas */
+#page15 { z-index: 10; }  /* Luis Miguel */
+#page16 { z-index: 9;  }  /* Luis Otavio */
+#page17 { z-index: 8;  }  /* Marcos */
+#page18 { z-index: 7;  }  /* Maria Eduarda */
+#page19 { z-index: 6;  }  /* Maria Vitória */
+#page20 { z-index: 5;  }  /* Natália */
+#page21 { z-index: 4;  }  /* Pamela */
+#page22 { z-index: 3;  }  /* Pedro */
+#page23 { z-index: 2;  }  /* Vivian */
+#page24 { z-index: 1;  }  /* Encerramento */
 
 .page-content {
   width: 100%;
@@ -139,7 +138,7 @@ body {
 .page-glam {
   position: relative;
   width: 100%;
-  min-height: min(620px, 88vh);  /* mesma altura base pra todas */
+  min-height: min(620px, 88vh);    /* mesma altura base pra todas */
   margin: 0 auto;
   border-radius: 16px;
   box-shadow:
@@ -196,7 +195,7 @@ body {
 
 .eyebrow {
   font-size: 0.9rem;
-  letter-spacing: 0.35em;
+  letter-spacing: 035em;
   text-transform: uppercase;
   color: var(--gold-soft);
   margin-bottom: 18px;
@@ -214,10 +213,10 @@ body {
 
 .subtitle {
   font-size: 0.8rem;
-  text-transform: uppercase;
+  text-transform:;
   letter-spacing: 0.26em;
   color: var(--gold-soft);
-  margin-bottom: 40px;
+  margin-bottom:40px;
   font-family: "Times New Roman", Georgia, serif;
 }
 
@@ -275,10 +274,10 @@ body {
   min-height: min(620px, 88vh);
   margin: 0 auto;
   border-radius: 16px;
-  background #000; /* fundo preto */
+  background: #000; /* fundo preto */
   box-shadow:
     0 0 0 1px rgba(0, 0, 0, 0.6),
-    0 24px 60px rgba(0, 0, 0 0.85);
+    0 24px 60px rgba(0, 0, 0, 0.85);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -301,11 +300,13 @@ body {
   border-color: rgba(212, 175, 55, 0.35);
 }
 
-/* imagem ocupando todo o conteúdo interno */
+/* FOTO DENTRO DA ÁREA ENTRE AS BORDAS, SEM PASSAR DO LIMITE */
 .page-foto-cheia img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover; /* preenche tudo; corta um pouquinho nas bordas se precisar */
+  position: relative;
+  z-index: 1;
+  width: calc(100% - 64px);   /* 32px de cada lado */
+  height: calc(100% - 64px);  /* 32px em cima/baixo */
+  object-fit: contain;        /* mostra inteira, não corta nada */
   border-radius: 12px;
 }
 
@@ -372,10 +373,10 @@ body {
   justify-content: center;
   align-items: center;
 
-  /* TAMANHO FIXO DO RETÂNGULO – PADRÃO PARA TODAS AS PÁGINAS */
+  /* tamanho fixo do retângulo – padrão */
   width: 100%;
   height: 230px;        /* ajuste se quiser mais alto/baixo */
-  overflow: hidden;     /* nada “vaza” para fora da borda */
+  overflow: hidden;
 }
 
 /* IMAGEM DENTRO DO RETÂNGULO, SEM CORTAR NADA */
@@ -404,8 +405,7 @@ body {
 /* Brasão da página final (se usar essa classe) */
 .brasao-final {
   grid-column: span 2;
-  display: flex;
-  justify-content: center;
+  display: flex  justify-content: center;
   margin-bottom: 24px;
 }
 
@@ -477,21 +477,20 @@ body {
   }
 
   .page-glam-inner,
-  .cover-inner {
+ cover-inner {
     width: 100%;
     max-width: 100%;
   }
 
-  .glam-layout {
-    grid-template-columns: 1fr;
+  .glam-layout    grid-template-columns: 1fr;
   }
 
-  /* retângulo um pouco menor no celular */
   .glam-photo {
     height: 210px;
   }
 
-  .page-foto-cheia {
-    padding: 0; /* foto realmente ocupando tudo no mobile também */
+  .page-foto-cheia img {
+    width: calc(100% - 48px);
+    height: calc(100% - 48px);
   }
 }
