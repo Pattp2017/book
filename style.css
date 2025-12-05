@@ -409,22 +409,21 @@ body {
 /* ===================== */
 @media (max-width: 768px) {
 
-  /* cada página ocupa a largura inteira do viewport */
+  /* FOLHA física da página (não aparece no fundo) */
   .page {
     width: 100%;
-    min-height: auto;
+    min-height: 100vh;          /* cada página ocupa a altura da tela */
     left: 50%;
     transform: translate(-50%, -50%);
-    /* tira sombra/fundo da “folha” física para não aparecerem as faixas de trás */
     box-shadow: none;
     background: transparent;
   }
 
-  /* cartões (capa + páginas glam) centralizados com respiro nas laterais */
+  /* CARTÕES (capa e páginas de aluno) */
   .cover,
   .page-glam {
-    width: 94vw;
-    min-height: auto;
+    width: 94vw;                /* respiro nas laterais */
+    min-height: auto;           /* deixa a altura se adaptar ao conteúdo */
     padding: 24px 16px 40px;
   }
 
@@ -434,35 +433,41 @@ body {
     max-width: 100%;
   }
 
-  /* em vez de 2 colunas lado a lado, fotos uma embaixo da outra */
+  /* GRID: em 1 coluna no celular (uma foto em cima, outra embaixo) */
   .glam-layout {
     grid-template-columns: 1fr;
   }
 
-  /* altura das caixas de foto acompanha a própria imagem */
+  /* BOX de foto no mobile: altura fixa => 2 fotos sempre alinhadas */
   .glam-photo {
-    height: auto;
+    width: 100%;
+    height: 210px;             /* se achar pequeno, aumente para 230/250px */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
   }
 
-  /* imagens se adaptam ao espaço, sem estourar nem cortar */
   .glam-photo img {
     max-width: 100%;
+    max-height: 100%;
+    width: auto;
     height: auto;
-    object-fit: contain;
+    object-fit: contain;       /* mostra a foto inteira dentro do box */
     display: block;
-    margin: 0 auto;
   }
 
-  /* se estiver usando a página 2 de foto cheia com essa classe */
+  /* Página especial da foto da turma (se estiver usando) */
   .page-foto-cheia {
     width: 94vw;
     max-width: 94vw;
-    height: auto;
-    padding: 16px; /* opcional, só pra dar respiro */
+    min-height: auto;
   }
 
   .page-foto-cheia img {
     max-width: 100%;
+    max-height: 80vh;          /* não passa da altura da tela */
+    width: auto;
     height: auto;
     object-fit: contain;
     display: block;
