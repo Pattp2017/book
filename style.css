@@ -403,25 +403,24 @@ body {
 .tema-roxo { --tema-fundo:#4b1366; }
 .tema-vinho { --tema-fundo:#5b0a2e; }
 .tema-rosa { --tema-fundo:#b83272; }
+
 /* ===================== */
 /* RESPONSIVO – CELULAR */
 /* ===================== */
 @media (max-width: 768px) {
 
+  /* cada página ocupa a largura inteira do viewport */
   .page {
     width: 100%;
     min-height: auto;
-
-    /* mantém as páginas centralizadas */
     left: 50%;
     transform: translate(-50%, -50%);
-
-    /* NÃO mostrar borda/cor de páginas que estão "atrás" */
+    /* tira sombra/fundo da “folha” física para não aparecerem as faixas de trás */
     box-shadow: none;
     background: transparent;
   }
 
-  /* só o cartão interno (cover, page-glam, etc.) terá sombra e borda */
+  /* cartões (capa + páginas glam) centralizados com respiro nas laterais */
   .cover,
   .page-glam {
     width: 94vw;
@@ -435,32 +434,38 @@ body {
     max-width: 100%;
   }
 
-  /* layout em 1 coluna */
+  /* em vez de 2 colunas lado a lado, fotos uma embaixo da outra */
   .glam-layout {
     grid-template-columns: 1fr;
   }
 
-  /* altura das fotos no mobile */
+  /* altura das caixas de foto acompanha a própria imagem */
   .glam-photo {
     height: auto;
   }
 
+  /* imagens se adaptam ao espaço, sem estourar nem cortar */
   .glam-photo img {
     max-width: 100%;
     height: auto;
     object-fit: contain;
+    display: block;
+    margin: 0 auto;
   }
 
-  /* se existir a página de foto cheia */
+  /* se estiver usando a página 2 de foto cheia com essa classe */
   .page-foto-cheia {
     width: 94vw;
     max-width: 94vw;
     height: auto;
+    padding: 16px; /* opcional, só pra dar respiro */
   }
 
   .page-foto-cheia img {
     max-width: 100%;
     height: auto;
     object-fit: contain;
+    display: block;
+    margin: 0 auto;
   }
 }
