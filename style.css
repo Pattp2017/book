@@ -405,46 +405,58 @@ body {
 .tema-rosa { --tema-fundo:#b83272; }
 
 /* ===================== */
-/* RESPONSIVO – CELULAR */
+/* RESPONSIVO – CELULAR  */
 /* ===================== */
 @media (max-width: 768px) {
 
-  /* FOLHA física da página (não aparece no fundo) */
+  /* 1. PÁGINAS EM FLUXO NORMAL (SEM EMPILHAR) */
   .page {
+    position: static;          /* tira absolute */
     width: 100%;
-    min-height: 100vh;          /* cada página ocupa a altura da tela */
-    left: 50%;
-    transform: translate(-50%, -50%);
-    box-shadow: none;
-    background: transparent;
+    min-height: auto;
+    transform: none;           /* sem translate/rotate */
+    margin: 0 auto 32px;       /* espaço entre uma “página” e outra */
+    backface-visibility: visible;
   }
 
-  /* CARTÕES (capa e páginas de aluno) */
+  /* some o 3D / animação de virar no mobile */
+  .page.flipped {
+    transform: none;
+  }
+
+  .book {
+    perspective: none;
+    padding: 16px 0 40px;
+  }
+
+  /* 2. CARTÕES CENTRALIZADOS COM RESPIRO NAS LATERAIS */
   .cover,
-  .page-glam {
-    width: 94vw;                /* respiro nas laterais */
-    min-height: auto;           /* deixa a altura se adaptar ao conteúdo */
-    padding: 24px 16px 40px;
+  .page-glam,
+  .page-foto-cheia {
+    width: 94vw;
+    min-height: auto;
+    padding: 24px 16px 32px;
+    margin: 0 auto;
   }
 
-  .page-glam-inner,
-  .cover-inner {
+  .cover-inner,
+  .page-glam-inner {
     width: 100%;
     max-width: 100%;
   }
 
-  /* GRID: em 1 coluna no celular (uma foto em cima, outra embaixo) */
+  /* 3. GRID DAS FOTOS: UMA EMBAIXO DA OUTRA */
   .glam-layout {
     grid-template-columns: 1fr;
   }
 
-  /* BOX de foto no mobile: altura fixa => 2 fotos sempre alinhadas */
+  /* 4. CAIXAS DAS FOTOS – MESMO TAMANHO, IMAGEM DENTRO */
   .glam-photo {
     width: 100%;
-    height: 210px;             /* se achar pequeno, aumente para 230/250px */
+    height: 210px;             /* ajuste se quiser maior/menor */
     display: flex;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
     overflow: hidden;
   }
 
@@ -453,24 +465,25 @@ body {
     max-height: 100%;
     width: auto;
     height: auto;
-    object-fit: contain;       /* mostra a foto inteira dentro do box */
+    object-fit: contain;       /* foto inteira, sem cortar */
     display: block;
   }
 
-  /* Página especial da foto da turma (se estiver usando) */
-  .page-foto-cheia {
-    width: 94vw;
-    max-width: 94vw;
-    min-height: auto;
-  }
-
+  /* 5. FOTO CHEIA (PÁGINA 2), SEM BARRA DE ROLAGEM */
   .page-foto-cheia img {
     max-width: 100%;
-    max-height: 80vh;          /* não passa da altura da tela */
+    max-height: 70vh;          /* nunca passa da altura da tela */
     width: auto;
     height: auto;
     object-fit: contain;
     display: block;
     margin: 0 auto;
+  }
+
+  /* 6. BARRA DE NAVEGAÇÃO: UMA SÓ, NÃO EMPILHADA */
+  .nav-bar {
+    position: static;
+    margin-top: 16px;
+    justify-content: center;
   }
 }
