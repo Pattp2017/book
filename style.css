@@ -408,48 +408,45 @@ body {
 /* RESPONSIVO – CELULAR  */
 /* ===================== */
 @media (max-width: 768px) {
-  /* 1. PÁGINAS EM FLUXO NORMAL (SEM EMPILHAR) */
+  /* Páginas em fluxo normal, sem empilhar e sem efeito flip */
   .page {
-    position: static;          /* remove absolute */
-    width: 100vw;              /* ocupa toda a largura da viewport */
-    min-height: 100vh;         /* ocupa toda a altura da viewport */
-    transform: none;           /* sem translate/rotate */
-    margin: 0;                 /* sem margem para evitar scroll */
+    position: static;
+    width: 100vw;
+    min-height: auto;
+    transform: none;
+    margin: 0 0 24px 0; /* espaço entre páginas */
     backface-visibility: visible;
-    overflow: hidden;          /* evita barra de rolagem */
+    overflow: hidden;
     display: flex;
-    flex-direction: column;    /* empilha conteúdos verticalmente */
+    flex-direction: column; /* empilha verticalmente */
     align-items: center;
     justify-content: center;
   }
 
-  /* remove efeito flip */
   .page.flipped {
     transform: none;
   }
 
   .book {
     perspective: none;
-    padding: 0;
+    padding: 16px 0 40px;
     width: 100vw;
-    height: 100vh;
-    overflow: hidden;          /* evita scroll */
+    overflow: hidden;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
   }
 
-  /* Cartões centralizados com respiro nas laterais */
+  /* Cartões e fotos ocupam toda a largura da viewport */
   .cover,
   .page-glam,
   .page-foto-cheia {
-    width: 100vw;
-    height: 100vh;
+    width: 94vw;
     min-height: auto;
-    padding: 0;
-    margin: 0;
-    border-radius: 0;
+    padding: 16px 12px 24px;
+    margin: 0 auto 24px auto;
+    border-radius: 12px;
     box-shadow: none;
     display: flex;
     flex-direction: column;
@@ -462,26 +459,24 @@ body {
   .page-glam-inner {
     width: 100%;
     max-width: 100%;
-    margin: 0;
-    padding: 0 16px;
+    margin: 0 auto;
+    padding: 0 12px;
     text-align: center;
   }
 
-  /* Grid das fotos: mostrar as duas fotos lado a lado ou empilhadas, sem scroll */
+  /* Layout das fotos: uma embaixo da outra */
   .glam-layout {
     display: flex;
-    flex-direction: row;
-    gap: 10px;
+    flex-direction: column; /* empilha verticalmente */
+    gap: 16px;
     width: 100%;
-    justify-content: center;
-    align-items: center;
+    margin-bottom: 20px;
   }
 
-  /* Ajusta as caixas das fotos para ocupar metade da tela cada uma */
+  /* Fotos com largura total e altura fixa para uniformidade */
   .glam-photo {
-    width: 48vw;               /* metade da largura da viewport */
-    height: auto;              /* altura automática para manter proporção */
-    max-height: 70vh;          /* limita altura para evitar scroll */
+    width: 100%;
+    height: 180px; /* altura menor para caber melhor */
     border-radius: 12px;
     border: 2px solid var(--gold);
     background: rgba(0,0,0,0.45);
@@ -497,22 +492,21 @@ body {
     max-height: 100%;
     width: auto;
     height: auto;
-    object-fit: contain;       /* mostra a foto inteira, sem cortar */
+    object-fit: contain;
     display: block;
   }
 
-  /* Mensagem em tela única, sem barra de rolagem */
+  /* Mensagem com fonte menor para caber melhor na tela */
   .glam-msg {
-    width: 100%;
-    max-width: 100%;
+    grid-column: span 2;
     border-radius: 12px;
     background: rgba(0,0,0,0.45);
     padding: 16px;
     font-style: italic;
-    font-size: 1.1rem;
+    font-size: 0.9rem; /* diminui o tamanho da fonte */
     line-height: 1.4;
     color: var(--gold);
-    margin-top: 16px;
+    margin-top: 12px;
     overflow-wrap: break-word;
   }
 
