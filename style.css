@@ -408,55 +408,87 @@ body {
 /* RESPONSIVO – CELULAR  */
 /* ===================== */
 @media (max-width: 768px) {
-
   /* 1. PÁGINAS EM FLUXO NORMAL (SEM EMPILHAR) */
   .page {
-    position: static;          /* tira absolute */
-    width: 100%;
-    min-height: auto;
+    position: static;          /* remove absolute */
+    width: 100vw;              /* ocupa toda a largura da viewport */
+    min-height: 100vh;         /* ocupa toda a altura da viewport */
     transform: none;           /* sem translate/rotate */
-    margin: 0 auto 32px;       /* espaço entre uma “página” e outra */
+    margin: 0;                 /* sem margem para evitar scroll */
     backface-visibility: visible;
+    overflow: hidden;          /* evita barra de rolagem */
+    display: flex;
+    flex-direction: column;    /* empilha conteúdos verticalmente */
+    align-items: center;
+    justify-content: center;
   }
 
-  /* some o 3D / animação de virar no mobile */
+  /* remove efeito flip */
   .page.flipped {
     transform: none;
   }
 
   .book {
     perspective: none;
-    padding: 16px 0 40px;
+    padding: 0;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;          /* evita scroll */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
   }
 
-  /* 2. CARTÕES CENTRALIZADOS COM RESPIRO NAS LATERAIS */
+  /* Cartões centralizados com respiro nas laterais */
   .cover,
   .page-glam,
   .page-foto-cheia {
-    width: 94vw;
+    width: 100vw;
+    height: 100vh;
     min-height: auto;
-    padding: 24px 16px 32px;
-    margin: 0 auto;
+    padding: 0;
+    margin: 0;
+    border-radius: 0;
+    box-shadow: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
   }
 
   .cover-inner,
   .page-glam-inner {
     width: 100%;
     max-width: 100%;
+    margin: 0;
+    padding: 0 16px;
+    text-align: center;
   }
 
-  /* 3. GRID DAS FOTOS: UMA EMBAIXO DA OUTRA */
+  /* Grid das fotos: mostrar as duas fotos lado a lado ou empilhadas, sem scroll */
   .glam-layout {
-    grid-template-columns: 1fr;
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
   }
 
-  /* 4. CAIXAS DAS FOTOS – MESMO TAMANHO, IMAGEM DENTRO */
+  /* Ajusta as caixas das fotos para ocupar metade da tela cada uma */
   .glam-photo {
-    width: 100%;
-    height: 210px;             /* ajuste se quiser maior/menor */
+    width: 48vw;               /* metade da largura da viewport */
+    height: auto;              /* altura automática para manter proporção */
+    max-height: 70vh;          /* limita altura para evitar scroll */
+    border-radius: 12px;
+    border: 2px solid var(--gold);
+    background: rgba(0,0,0,0.45);
+    padding: 0;
     display: flex;
-    align-items: center;
     justify-content: center;
+    align-items: center;
     overflow: hidden;
   }
 
@@ -465,22 +497,26 @@ body {
     max-height: 100%;
     width: auto;
     height: auto;
-    object-fit: contain;       /* foto inteira, sem cortar */
+    object-fit: contain;       /* mostra a foto inteira, sem cortar */
     display: block;
   }
 
-  /* 5. FOTO CHEIA (PÁGINA 2), SEM BARRA DE ROLAGEM */
-  .page-foto-cheia img {
+  /* Mensagem em tela única, sem barra de rolagem */
+  .glam-msg {
+    width: 100%;
     max-width: 100%;
-    max-height: 70vh;          /* nunca passa da altura da tela */
-    width: auto;
-    height: auto;
-    object-fit: contain;
-    display: block;
-    margin: 0 auto;
+    border-radius: 12px;
+    background: rgba(0,0,0,0.45);
+    padding: 16px;
+    font-style: italic;
+    font-size: 1.1rem;
+    line-height: 1.4;
+    color: var(--gold);
+    margin-top: 16px;
+    overflow-wrap: break-word;
   }
 
-  /* 6. BARRA DE NAVEGAÇÃO: UMA SÓ, NÃO EMPILHADA */
+  /* Navegação simplificada para mobile */
   .nav-bar {
     position: static;
     margin-top: 16px;
