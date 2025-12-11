@@ -408,116 +408,126 @@ body {
 /* RESPONSIVO – CELULAR  */
 /* ===================== */
 @media (max-width: 768px) {
-  /* Páginas em fluxo normal, sem empilhar horizontalmente */
-  .page {
-    position: static;
-    width: 100vw;
-    min-height: auto;
-    transform: none;
-    margin: 0 0 32px 0;
-    backface-visibility: visible;
-    overflow: visible;
-    display: flex;
-    flex-direction: column; /* empilha verticalmente */
-    align-items: center;
-    justify-content: center;
-  }
-
-  .page.flipped {
-    transform: none;
-  }
-
+  /* Container principal */
   .book {
-    perspective: none;
-    padding: 16px 0 40px;
-    width: 100vw;
-    overflow-x: hidden;
+    perspective: none !important;
+    padding: 16px 0 40px !important;
+    width: 100vw !important;
+    overflow-x: hidden !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: flex-start !important;
   }
 
-  /* Cartões e fotos ocupando toda a largura, empilhados */
+  /* Cada página empilhada verticalmente, sem posicionamento absoluto */
+  .page {
+    position: static !important;
+    width: 94vw !important;
+    min-height: auto !important;
+    margin: 0 0 32px 0 !important;
+    transform: none !important;
+    backface-visibility: visible !important;
+    overflow: visible !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    z-index: auto !important;
+  }
+
+  /* Remove efeito flip */
+  .page.flipped {
+    transform: none !important;
+  }
+
+  /* Cartões e fotos com bordas arredondadas e sombra removidas para melhor aproveitamento */
   .cover,
   .page-glam,
   .page-foto-cheia {
-    width: 94vw;
-    min-height: auto;
-    padding: 24px 16px 32px;
-    margin: 0 auto 32px auto;
-    border-radius: 12px;
-    box-shadow: none;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    overflow: hidden;
+    width: 100% !important;
+    max-width: 600px !important;
+    min-height: auto !important;
+    padding: 24px 16px 32px !important;
+    margin: 0 auto 32px auto !important;
+    border-radius: 12px !important;
+    box-shadow: none !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    overflow: hidden !important;
   }
 
   .cover-inner,
   .page-glam-inner {
-    width: 100%;
-    max-width: 100%;
-    margin: 0 auto;
-    padding: 0 10px;
-    text-align: center;
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 auto !important;
+    padding: 0 12px !important;
+    text-align: center !important;
   }
 
-  /* Fotos empilhadas verticalmente */
+  /* Layout das fotos empilhadas verticalmente */
   .glam-layout {
-    display: flex;
-    flex-direction: column; /* empilha as fotos uma embaixo da outra */
-    gap: 16px;
-    width: 100%;
-    margin-bottom: 30px;
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 16px !important;
+    width: 100% !important;
+    margin-bottom: 30px !important;
   }
 
-  /* Caixas das fotos com largura total e altura consistente */
+  /* Fotos com largura total e altura uniforme */
   .glam-photo {
-    width: 100%;
-    height: 210px; /* altura consistente */
-    border-radius: 12px;
-    border: 2px solid var(--gold);
-    background: rgba(0,0,0,0.45);
-    padding: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    overflow: hidden;
+    width: 100% !important;
+    max-width: 100% !important;
+    height: 210px !important;
+    border-radius: 12px !important;
+    border: 2px solid var(--gold) !important;
+    background: rgba(0,0,0,0.45) !important;
+    padding: 0 !important;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    overflow: hidden !important;
   }
 
   .glam-photo img {
-    max-width: 100%;
-    max-height: 100%;
-    width: auto;
-    height: auto;
-    object-fit: contain;
-    display: block;
+    max-width: 100% !important;
+    max-height: 100% !important;
+    width: auto !important;
+    height: auto !important;
+    object-fit: contain !important;
+    display: block !important;
   }
 
-  /* Mensagem com fonte menor */
+  /* Mensagem com fonte menor para melhor ajuste */
   .glam-msg {
-    grid-column: span 2;
-    border-radius: 12px;
-    background: rgba(0,0,0,0.45);
-    padding: 16px;
-    font-style: italic;
-    font-size: 0.9rem; /* fonte menor */
-    line-height: 1.4;
-    color: var(--gold);
-    margin-top: 16px;
+    font-size: 0.9rem !important;
+    line-height: 1.4 !important;
+    padding: 16px !important;
+    background: rgba(0,0,0,0.45) !important;
+    border-radius: 12px !important;
+    border: 1px solid var(--gold) !important;
+    color: var(--gold) !important;
+    margin-top: 16px !important;
+    max-width: 600px !important;
+    width: 100% !important;
   }
 
-  /* Aumentar um pouco a imagem da segunda página */
+  /* Aumentar a imagem da segunda página */
+  #page2 .page-foto-cheia img,
   .page-foto-cheia img {
-    max-width: 100%;
-    max-height: 80vh; /* aumenta a altura máxima */
-    width: auto;
-    height: auto;
-    object-fit: contain;
-    display: block;
-    margin: 0 auto;
+    max-height: 80vh !important;
+    width: auto !important;
+    height: auto !important;
+    margin: 0 auto !important;
   }
 
-  /* Esconder botões de navegação no celular */
+  /* Ocultar botões de navegação no celular */
   .nav-bar {
-    display: none;
+    display: none !important;
   }
 }
+
+
